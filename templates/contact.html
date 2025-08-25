@@ -1,0 +1,207 @@
+{% extends "base.html" %}
+
+{% block title %}Contact Us - TechAssist{% endblock %}
+
+{% block extra_css %}
+.page-header {
+    background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+    color: white;
+    padding: 8rem 0 4rem;
+    margin-top: 76px; /* Account for fixed navbar */
+}
+
+.contact-form-card {
+    background: white;
+    border-radius: 20px;
+    padding: 3rem;
+    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.1);
+    margin-top: -4rem;
+    position: relative;
+    z-index: 2;
+}
+
+.contact-info-card {
+    background: white;
+    border-radius: 20px;
+    padding: 2rem;
+    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.1);
+    height: 100%;
+}
+
+.contact-info-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1.5rem;
+}
+
+.contact-info-icon {
+    width: 50px;
+    height: 50px;
+    background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 1rem;
+    color: white;
+    font-size: 1.2rem;
+}
+
+.form-control:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 0.2rem rgba(37, 99, 235, 0.25);
+}
+
+.form-select:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 0.2rem rgba(37, 99, 235, 0.25);
+}
+{% endblock %}
+
+{% block content %}
+<!-- Page Header -->
+<section class="page-header">
+    <div class="container">
+        <div class="row">
+            <div class="col-12 text-center">
+                <h1 class="display-4 fw-bold mb-4">Get In Touch</h1>
+                <p class="lead">Ready to solve your tech problems? Contact us today!</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Contact Section -->
+<section class="section-padding">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8">
+                <div class="contact-form-card fade-in">
+                    <h3 class="mb-4">Send us a Message</h3>
+                    <form action="{{ url_for('contact') }}" method="POST">
+                        <div class="row g-3">
+                            <div class="col-md-6">
+                                <label for="firstName" class="form-label">First Name *</label>
+                                <input type="text" class="form-control" id="firstName" name="firstName" required>
+                            </div>
+                            <div class="col-md-6">
+                                <label for="lastName" class="form-label">Last Name *</label>
+                                <input type="text" class="form-control" id="lastName" name="lastName" required>
+                            </div>
+                            <div class="col-md-6">
+                                <label for="email" class="form-label">Email *</label>
+                                <input type="email" class="form-control" id="email" name="email" required>
+                            </div>
+                            <div class="col-md-6">
+                                <label for="phone" class="form-label">Phone *</label>
+                                <input type="tel" class="form-control" id="phone" name="phone" required>
+                            </div>
+                            <div class="col-12">
+                                <label for="service" class="form-label">Service Needed *</label>
+                                <select class="form-select" id="service" name="service" required>
+                                    <option value="">Select a service</option>
+                                    {% for service_key, service_info in services_data.items() %}
+                                    <option value="{{ service_key }}">{{ service_info.title }}</option>
+                                    {% endfor %}
+                                    <option value="other">Other</option>
+                                </select>
+                            </div>
+                            <div class="col-12">
+                                <label for="message" class="form-label">Message</label>
+                                <textarea class="form-control" id="message" name="message" rows="5" placeholder="Tell us about your tech needs..."></textarea>
+                            </div>
+                            <div class="col-12">
+                                <button type="submit" class="btn btn-primary btn-lg">
+                                    <i class="fas fa-paper-plane me-2"></i>Send Message
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            
+            <div class="col-lg-4">
+                <div class="contact-info-card fade-in">
+                    <h4 class="mb-4">Contact Information</h4>
+                    
+                    <div class="contact-info-item">
+                        <div class="contact-info-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div>
+                            <h6 class="mb-1">Address</h6>
+                            <p class="mb-0 text-muted">123 Tech Street<br>San Francisco, CA 94102</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-info-item">
+                        <div class="contact-info-icon">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <div>
+                            <h6 class="mb-1">Phone</h6>
+                            <p class="mb-0 text-muted">+1 (800) 342-4999</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-info-item">
+                        <div class="contact-info-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div>
+                            <h6 class="mb-1">Email</h6>
+                            <p class="mb-0 text-muted">support@techassist.com</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-info-item">
+                        <div class="contact-info-icon">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <div>
+                            <h6 class="mb-1">Hours</h6>
+                            <p class="mb-0 text-muted">Mon-Fri: 8AM - 8PM<br>Sat-Sun: 9AM - 6PM</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Map Section (Optional - you can replace with actual map integration) -->
+<section class="bg-light py-5">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <div class="bg-secondary rounded" style="height: 400px; display: flex; align-items: center; justify-content: center;">
+                    <div class="text-center">
+                        <i class="fas fa-map-marked-alt fa-3x text-primary mb-3"></i>
+                        <h4>Interactive Map</h4>
+                        <p class="text-muted">Integrate with Google Maps or similar service</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}
+
+{% block extra_js %}
+// Form submission handling
+document.querySelector('form').addEventListener('submit', function(e) {
+    const submitBtn = this.querySelector('button[type="submit"]');
+    const originalText = submitBtn.innerHTML;
+    
+    submitBtn.innerHTML = '<span class="loading-spinner me-2"></span>Sending...';
+    submitBtn.disabled = true;
+    
+    // Re-enable button after 3 seconds if form hasn't redirected
+    setTimeout(() => {
+        if (submitBtn.disabled) {
+            submitBtn.innerHTML = originalText;
+            submitBtn.disabled = false;
+        }
+    }, 3000);
+});
+{% endblock %}

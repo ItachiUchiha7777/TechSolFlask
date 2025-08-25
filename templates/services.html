@@ -1,0 +1,121 @@
+{% extends "base.html" %}
+
+{% block title %}Our Services - TechAssist{% endblock %}
+
+{% block extra_css %}
+.page-header {
+    background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+    color: white;
+    padding: 8rem 0 4rem;
+    margin-top: 76px; /* Account for fixed navbar */
+}
+
+.service-category-card {
+    background: white;
+    border-radius: 20px;
+    padding: 2rem;
+    margin-bottom: 2rem;
+    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    height: 100%;
+}
+
+.service-category-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+}
+
+.category-icon {
+    width: 80px;
+    height: 80px;
+    background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1.5rem;
+    font-size: 2rem;
+    color: white;
+}
+
+.service-list {
+    list-style: none;
+    padding: 0;
+}
+
+.service-list li {
+    padding: 0.5rem 0;
+    border-bottom: 1px solid #e2e8f0;
+    transition: all 0.3s ease;
+}
+
+.service-list li:last-child {
+    border-bottom: none;
+}
+
+.service-list li:hover {
+    color: var(--primary-color);
+    padding-left: 1rem;
+}
+
+.service-list li i {
+    margin-right: 0.5rem;
+    color: var(--success-color);
+}
+{% endblock %}
+
+{% block content %}
+<!-- Page Header -->
+<section class="page-header">
+    <div class="container">
+        <div class="row">
+            <div class="col-12 text-center">
+                <h1 class="display-4 fw-bold mb-4">Our Services</h1>
+                <p class="lead">Comprehensive technology solutions for all your needs</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Services Grid -->
+<section class="section-padding">
+    <div class="container">
+        <div class="row g-4">
+            {% for service_key, service_info in services_data.items() %}
+            <div class="col-lg-6 col-md-6">
+                <div class="service-category-card fade-in">
+                    <div class="category-icon">
+                        <i class="{{ service_info.icon }}"></i>
+                    </div>
+                    <h4 class="text-center mb-3">{{ service_info.title }}</h4>
+                    <ul class="service-list">
+                        {% for service in service_info.services %}
+                        <li><i class="fas fa-check-circle"></i>{{ service }}</li>
+                        {% endfor %}
+                    </ul>
+                    <div class="text-center mt-4">
+                        <a href="{{ url_for('service_category', category=service_key) }}" class="btn btn-primary">Learn More</a>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
+<!-- CTA Section -->
+<section class="section-padding bg-light">
+    <div class="container text-center">
+        <h2 class="section-title fade-in">Need Help with Your Technology?</h2>
+        <p class="section-subtitle fade-in">Our expert team is ready to assist you with any technical challenge</p>
+        <div class="d-flex justify-content-center gap-3 flex-wrap fade-in">
+            <a href="{{ url_for('contact') }}" class="btn btn-primary btn-lg">
+                <i class="fas fa-calendar-check me-2"></i>Schedule Service
+            </a>
+            <a href="tel:+18003424999" class="btn btn-outline-primary btn-lg">
+                <i class="fas fa-phone me-2"></i>Call Now
+            </a>
+        </div>
+    </div>
+</section>
+{% endblock %}

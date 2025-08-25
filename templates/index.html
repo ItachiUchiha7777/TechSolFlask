@@ -1,0 +1,778 @@
+{% extends "base.html" %}
+
+{% block extra_css %}
+/* Hero Section */
+.hero-section {
+    background: linear-gradient(135deg, rgba(37, 99, 235, 0.9), rgba(14, 165, 233, 0.9)),
+                url('https://images.unsplash.com/photo-1581092580497-e0d23cbdf1dc?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, rgba(37, 99, 235, 0.1), rgba(14, 165, 233, 0.1));
+    z-index: 1;
+}
+
+.hero-content {
+    text-align: center;
+    color: white;
+    z-index: 2;
+    position: relative;
+}
+
+.hero-title {
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    line-height: 1.2;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    animation: fadeInUp 1s ease 0.2s both;
+}
+
+.hero-subtitle {
+    font-size: clamp(1.1rem, 2vw, 1.25rem);
+    margin-bottom: 2rem;
+    opacity: 0.95;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    animation: fadeInUp 1s ease 0.4s both;
+}
+
+.hero-buttons {
+    animation: fadeInUp 1s ease 0.6s both;
+}
+
+.hero-buttons .btn {
+    margin: 0.5rem;
+}
+
+/* Floating Elements */
+.floating-elements {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.floating-element {
+    position: absolute;
+    opacity: 0.1;
+    animation: float 6s ease-in-out infinite;
+}
+
+.floating-element:nth-child(1) {
+    top: 20%;
+    left: 10%;
+    animation-delay: 0s;
+}
+
+.floating-element:nth-child(2) {
+    top: 60%;
+    right: 10%;
+    animation-delay: 2s;
+}
+
+.floating-element:nth-child(3) {
+    bottom: 20%;
+    left: 20%;
+    animation-delay: 4s;
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0px) rotate(0deg); }
+    50% { transform: translateY(-20px) rotate(10deg); }
+}
+
+/* Service Cards */
+.service-card {
+    background: white;
+    border-radius: 20px;
+    padding: 2rem 1.5rem;
+    text-align: center;
+    transition: all 0.3s ease;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+}
+
+.service-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(37, 99, 235, 0.1), transparent);
+    transition: all 0.5s ease;
+}
+
+.service-card:hover::before {
+    left: 100%;
+}
+
+.service-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+}
+
+.service-icon {
+    width: 80px;
+    height: 80px;
+    background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1.5rem;
+    font-size: 2rem;
+    color: white;
+    position: relative;
+    z-index: 2;
+}
+
+.service-card h5 {
+    font-weight: 600;
+    margin-bottom: 1rem;
+    color: var(--text-dark);
+    position: relative;
+    z-index: 2;
+}
+
+.service-card p {
+    color: var(--text-light);
+    margin-bottom: 1.5rem;
+    position: relative;
+    z-index: 2;
+}
+
+/* Features Grid */
+.feature-item {
+    text-align: center;
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.feature-icon {
+    width: 100px;
+    height: 100px;
+    background: var(--secondary-color);
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1rem;
+    font-size: 2.5rem;
+    color: var(--primary-color);
+    transition: all 0.3s ease;
+}
+
+.feature-item:hover .feature-icon {
+    background: var(--primary-color);
+    color: white;
+    transform: scale(1.1);
+}
+
+/* Process Steps */
+.process-step {
+    background: white;
+    border-radius: 20px;
+    padding: 2rem;
+    margin-bottom: 2rem;
+    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.process-step:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+}
+
+.step-number {
+    width: 60px;
+    height: 60px;
+    background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    position: relative;
+}
+
+.step-connector {
+    position: absolute;
+    top: 30px;
+    left: 50%;
+    width: 2px;
+    height: 60px;
+    background: linear-gradient(to bottom, var(--primary-color), transparent);
+    transform: translateX(-50%);
+    z-index: 1;
+}
+
+.process-step:last-child .step-connector {
+    display: none;
+}
+
+/* Testimonials */
+.testimonial-card {
+    background: white;
+    border-radius: 20px;
+    padding: 2rem;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    height: 100%;
+}
+
+.testimonial-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+}
+
+.stars {
+    color: #fbbf24;
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+}
+
+.testimonial-text {
+    font-style: italic;
+    margin-bottom: 1.5rem;
+    color: var(--text-light);
+    line-height: 1.6;
+}
+
+.testimonial-author {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.author-avatar {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-weight: 600;
+    font-size: 1.2rem;
+}
+
+.author-info h6 {
+    margin: 0;
+    font-weight: 600;
+    color: var(--text-dark);
+}
+
+.author-info small {
+    color: var(--text-light);
+}
+
+/* Stats Section */
+.stats-section {
+    background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+    color: white;
+    position: relative;
+    overflow: hidden;
+}
+
+.stats-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="2" fill="white" opacity="0.1"/></svg>');
+    background-size: 50px 50px;
+}
+
+.stat-item {
+    text-align: center;
+    padding: 1.5rem;
+}
+
+.stat-number {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    display: block;
+}
+
+.stat-label {
+    font-size: 1.1rem;
+    opacity: 0.9;
+}
+
+/* CTA Section */
+.cta-section {
+    background: linear-gradient(135deg, #1e293b, #334155);
+    color: white;
+    position: relative;
+    overflow: hidden;
+}
+
+.cta-section::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(37, 99, 235, 0.1) 0%, transparent 70%);
+    animation: rotate 20s linear infinite;
+}
+
+@keyframes rotate {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Emergency Badge */
+.emergency-badge {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    z-index: 1000;
+    background: linear-gradient(135deg, #ef4444, #dc2626);
+    color: white;
+    padding: 1rem 1.5rem;
+    border-radius: 50px;
+    box-shadow: 0 10px 30px rgba(239, 68, 68, 0.3);
+    animation: pulse 2s infinite;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.emergency-badge:hover {
+    transform: scale(1.05);
+    box-shadow: 0 15px 40px rgba(239, 68, 68, 0.4);
+}
+
+@keyframes pulse {
+    0% { box-shadow: 0 10px 30px rgba(239, 68, 68, 0.3); }
+    50% { box-shadow: 0 10px 30px rgba(239, 68, 68, 0.6); }
+    100% { box-shadow: 0 10px 30px rgba(239, 68, 68, 0.3); }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .hero-section {
+        background-attachment: scroll;
+    }
+    
+    .emergency-badge {
+        bottom: 20px;
+        right: 20px;
+        padding: 0.75rem 1rem;
+        font-size: 0.9rem;
+    }
+    
+    .floating-elements {
+        display: none;
+    }
+}
+{% endblock %}
+
+{% block content %}
+<!-- Hero Section -->
+<section class="hero-section">
+    <div class="floating-elements">
+        <div class="floating-element">
+            <i class="fas fa-laptop" style="font-size: 3rem; color: white;"></i>
+        </div>
+        <div class="floating-element">
+            <i class="fas fa-mobile-alt" style="font-size: 2.5rem; color: white;"></i>
+        </div>
+        <div class="floating-element">
+            <i class="fas fa-wifi" style="font-size: 2rem; color: white;"></i>
+        </div>
+    </div>
+    
+    <div class="container">
+        <div class="hero-content">
+            <h1 class="hero-title">Complete Technology Solutions</h1>
+            <p class="hero-subtitle">
+                From computer repairs to smart home installations, we're your trusted technology partner. 
+                Professional, reliable, and available when you need us most.
+            </p>
+            <div class="hero-buttons">
+                <a href="{{ url_for('contact') }}" class="btn btn-primary btn-lg me-3">
+                    <i class="fas fa-rocket me-2"></i>Get Started Today
+                </a>
+                <a href="tel:+18003424999" class="btn btn-outline-light btn-lg">
+                    <i class="fas fa-phone me-2"></i>Call Now
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Services Section -->
+<section class="section-padding bg-light">
+    <div class="container">
+        <h2 class="section-title">Our Expert Services</h2>
+        <p class="section-subtitle">
+            Whatever your technology needs, we have the expertise to get you back up and running quickly.
+        </p>
+        
+        <div class="row g-4">
+            {% set service_items = [
+                {
+                    'icon': 'fas fa-laptop',
+                    'title': 'Computer Repair',
+                    'description': 'Hardware diagnostics, virus removal, performance optimization, and complete system restoration.',
+                    'link': 'computer-repair'
+                },
+                {
+                    'icon': 'fas fa-mobile-alt',
+                    'title': 'Mobile Device Support',
+                    'description': 'Screen repairs, battery replacement, data recovery, and software troubleshooting.',
+                    'link': 'mobile-support'
+                },
+                {
+                    'icon': 'fas fa-wifi',
+                    'title': 'Network Solutions',
+                    'description': 'WiFi setup, network security, connectivity issues, and smart home integration.',
+                    'link': 'network-solutions'
+                },
+                {
+                    'icon': 'fas fa-shield-alt',
+                    'title': 'Data Protection',
+                    'description': 'Backup solutions, data recovery, cybersecurity, and privacy protection.',
+                    'link': 'data-protection'
+                },
+                {
+                    'icon': 'fas fa-home',
+                    'title': 'Smart Home Setup',
+                    'description': 'Home automation, IoT devices, security systems, and entertainment centers.',
+                    'link': 'smart-home'
+                },
+                {
+                    'icon': 'fas fa-headset',
+                    'title': '24/7 Support',
+                    'description': 'Round-the-clock technical support, remote assistance, and emergency services.',
+                    'link': 'support'
+                }
+            ] %}
+            
+            {% for service in service_items %}
+            <div class="col-lg-4 col-md-6">
+                <div class="service-card fade-in">
+                    <div class="service-icon">
+                        <i class="{{ service.icon }}"></i>
+                    </div>
+                    <h5>{{ service.title }}</h5>
+                    <p>{{ service.description }}</p>
+                    <a href="{{ url_for('service_category', category=service.link) }}" class="btn btn-outline-primary">
+                        Learn More <i class="fas fa-arrow-right ms-1"></i>
+                    </a>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
+<!-- Features Section -->
+<section class="section-padding">
+    <div class="container">
+        <h2 class="section-title">Why Choose TechAssist?</h2>
+        <div class="row g-4">
+            {% set features = [
+                {
+                    'icon': 'fas fa-clock',
+                    'title': 'Fast Response',
+                    'description': 'Same-day service available with emergency support options.'
+                },
+                {
+                    'icon': 'fas fa-user-shield',
+                    'title': 'Certified Experts',
+                    'description': 'Industry-certified technicians with years of experience.'
+                },
+                {
+                    'icon': 'fas fa-dollar-sign',
+                    'title': 'Fair Pricing',
+                    'description': 'Transparent pricing with no hidden fees or surprises.'
+                },
+                {
+                    'icon': 'fas fa-medal',
+                    'title': 'Satisfaction Guaranteed',
+                    'description': '100% satisfaction guarantee on all our services.'
+                }
+            ] %}
+            
+            {% for feature in features %}
+            <div class="col-lg-3 col-md-6">
+                <div class="feature-item fade-in">
+                    <div class="feature-icon">
+                        <i class="{{ feature.icon }}"></i>
+                    </div>
+                    <h5>{{ feature.title }}</h5>
+                    <p>{{ feature.description }}</p>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
+<!-- Process Section -->
+<section id="process" class="section-padding bg-light">
+    <div class="container">
+        <h2 class="section-title">How It Works</h2>
+        <p class="section-subtitle">Getting help with your technology issues is easier than ever.</p>
+        
+        <div class="row justify-content-center">
+            <div class="col-lg-8">
+                {% set process_steps = [
+                    {
+                        'number': '1',
+                        'title': 'Contact Us',
+                        'description': 'Call, text, or submit a request online. We\'ll respond within minutes to understand your needs.'
+                    },
+                    {
+                        'number': '2',
+                        'title': 'Schedule Service',
+                        'description': 'Choose a convenient time for on-site service or remote support based on your preference.'
+                    },
+                    {
+                        'number': '3',
+                        'title': 'Expert Diagnosis',
+                        'description': 'Our certified technicians quickly identify the issue and explain the solution in plain English.'
+                    },
+                    {
+                        'number': '4',
+                        'title': 'Problem Solved',
+                        'description': 'We fix the issue efficiently and provide tips to prevent future problems. Satisfaction guaranteed.'
+                    }
+                ] %}
+                
+                {% for step in process_steps %}
+                <div class="process-step fade-in">
+                    <div class="d-flex align-items-start">
+                        <div class="step-number me-3">{{ step.number }}</div>
+                        <div>
+                            <h5>{{ step.title }}</h5>
+                            <p class="mb-0">{{ step.description }}</p>
+                        </div>
+                    </div>
+                    {% if not loop.last %}
+                    <div class="step-connector"></div>
+                    {% endif %}
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Stats Section -->
+<section class="stats-section section-padding">
+    <div class="container">
+        <div class="row g-4 text-center">
+            <div class="col-lg-3 col-md-6">
+                <div class="stat-item fade-in">
+                    <span class="stat-number" data-count="5000">0</span>
+                    <div class="stat-label">Happy Customers</div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6">
+                <div class="stat-item fade-in">
+                    <span class="stat-number" data-count="15">0</span>
+                    <div class="stat-label">Years Experience</div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6">
+                <div class="stat-item fade-in">
+                    <span class="stat-number" data-count="24">0</span>
+                    <div class="stat-label">Hour Support</div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6">
+                <div class="stat-item fade-in">
+                    <span class="stat-number" data-count="98">0</span>
+                    <div class="stat-label">% Success Rate</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Testimonials Section -->
+<section id="testimonials" class="section-padding">
+    <div class="container">
+        <h2 class="section-title">What Our Customers Say</h2>
+        <div class="row g-4">
+            {% set testimonials = [
+                {
+                    'text': 'TechAssist saved my business! When our network went down, they had us back online within hours. Professional, fast, and reasonably priced.',
+                    'author': 'Sarah Johnson',
+                    'role': 'Small Business Owner',
+                    'avatar': 'SJ'
+                },
+                {
+                    'text': 'I thought my laptop was beyond repair, but TechAssist brought it back to life. Now it runs better than when it was new!',
+                    'author': 'Michael Chen',
+                    'role': 'Freelance Designer',
+                    'avatar': 'MC'
+                },
+                {
+                    'text': 'The smart home setup they did for us is incredible. Everything works perfectly, and they explained how to use everything.',
+                    'author': 'Emily Rodriguez',
+                    'role': 'Homeowner',
+                    'avatar': 'ER'
+                }
+            ] %}
+            
+            {% for testimonial in testimonials %}
+            <div class="col-lg-4">
+                <div class="testimonial-card fade-in">
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p class="testimonial-text">"{{ testimonial.text }}"</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">{{ testimonial.avatar }}</div>
+                        <div class="author-info">
+                            <h6>{{ testimonial.author }}</h6>
+                            <small>{{ testimonial.role }}</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
+<!-- CTA Section -->
+<section class="cta-section section-padding">
+    <div class="container text-center">
+        <div class="row justify-content-center">
+            <div class="col-lg-8">
+                <h2 class="section-title text-white mb-4">Ready to Get Started?</h2>
+                <p class="lead text-white-50 mb-4">
+                    Don't let technology problems slow you down. Contact us today for fast, 
+                    professional service that gets you back to what matters most.
+                </p>
+                <div class="d-flex flex-column flex-sm-row gap-3 justify-content-center">
+                    <a href="{{ url_for('contact') }}" class="btn btn-light btn-lg">
+                        <i class="fas fa-calendar-check me-2"></i>Schedule Service
+                    </a>
+                    <a href="tel:+18003424999" class="btn btn-outline-light btn-lg">
+                        <i class="fas fa-phone me-2"></i>Call (800) 342-4999
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Emergency Support Badge -->
+<div class="emergency-badge" onclick="window.location.href='tel:+18003424999'">
+    <i class="fas fa-exclamation-triangle me-2"></i>
+    <strong>Emergency?</strong>
+    <div style="font-size: 0.9rem;">Click to call now</div>
+</div>
+{% endblock %}
+
+{% block extra_js %}
+// Counter Animation
+function animateCounters() {
+    const counters = document.querySelectorAll('[data-count]');
+    
+    counters.forEach(counter => {
+        const target = parseInt(counter.getAttribute('data-count'));
+        const current = parseInt(counter.textContent);
+        const increment = target / 100;
+        
+        if (current < target) {
+            counter.textContent = Math.ceil(current + increment);
+            setTimeout(() => animateCounters(), 20);
+        } else {
+            counter.textContent = target + (counter.parentElement.querySelector('.stat-label').textContent.includes('%') ? '%' : '');
+        }
+    });
+}
+
+// Trigger counter animation when stats section is visible
+const statsSection = document.querySelector('.stats-section');
+if (statsSection) {
+    const statsObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                animateCounters();
+                statsObserver.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.5 });
+    
+    statsObserver.observe(statsSection);
+}
+
+// Smooth scroll for process section links
+document.querySelectorAll('a[href="#process"]').forEach(link => {
+    link.addEventListener('click', function(e) {
+        e.preventDefault();
+        document.getElementById('process').scrollIntoView({
+            behavior: 'smooth'
+        });
+    });
+});
+
+// Enhanced floating elements animation
+document.querySelectorAll('.floating-element').forEach((element, index) => {
+    element.style.animationDelay = `${index * 2}s`;
+    element.style.animationDuration = `${6 + index}s`;
+});
+
+// Service card hover effects
+document.querySelectorAll('.service-card').forEach(card => {
+    card.addEventListener('mouseenter', function() {
+        this.style.transform = 'translateY(-10px) scale(1.02)';
+    });
+    
+    card.addEventListener('mouseleave', function() {
+        this.style.transform = 'translateY(0) scale(1)';
+    });
+});
+
+// Emergency badge pulse effect enhancement
+const emergencyBadge = document.querySelector('.emergency-badge');
+if (emergencyBadge) {
+    setInterval(() => {
+        emergencyBadge.style.animation = 'none';
+        setTimeout(() => {
+            emergencyBadge.style.animation = 'pulse 2s infinite';
+        }, 100);
+    }, 10000);
+}
+{% endblock %}
