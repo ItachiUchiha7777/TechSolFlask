@@ -3,29 +3,6 @@
 {% block title %}{{ service_data.title }} - TechAssist{% endblock %}
 
 {% block extra_css %}
-
-.centered-card {
-    display: flex;
-    justify-content: center;
-}
-
-.centered-card .service-category-card {
-    max-width: 350px; /* Adjust this width as needed */
-    width: 100%;
-}
-
-/* Center last card when it's alone in the final row */
-.row.g-4 > div:last-child:nth-child(3n+1) {
-    margin: 1.5rem auto 0;
-}
-
-/* For tablet view (2 columns), center if last card is alone */
-@media (max-width: 991.98px) {
-    .row.g-4 > div:last-child:nth-child(2n+1) {
-        margin: 1.5rem auto 0;
-    }
-}
-
 .page-header {
     background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
     color: white;
@@ -67,82 +44,51 @@
     box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
 }
 
-.service-icon-large {
-    width: 120px;
-    height: 120px;
-    background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
-    border-radius: 30px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+/* Image Gallery Styles */
+.service-gallery {
     margin: 0 auto 2rem;
-    font-size: 3rem;
-    color: white;
-    animation: pulse-icon 3s ease-in-out infinite;
+    max-width: 600px;
 }
 
-@keyframes pulse-icon {
-    0%, 100% { transform: scale(1); }
-    50% { transform: scale(1.05); }
-}
-
-.service-item {
-    background: #f8fafc;
-    border-radius: 15px;
-    padding: 1.5rem;
-    margin-bottom: 1rem;
-    border-left: 4px solid var(--primary-color);
-    transition: all 0.3s ease;
+.gallery-main {
     position: relative;
-    overflow: hidden;
+    margin-bottom: 1rem;
 }
 
-.service-item::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: -100%;
+.main-image {
     width: 100%;
-    height: 100%;
-    background: linear-gradient(90deg, transparent, rgba(37, 99, 235, 0.1), transparent);
-    transition: left 0.5s ease;
-}
-
-.service-item:hover::before {
-    left: 100%;
-}
-
-.service-item:hover {
-    background: white;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 20px;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-    transform: translateX(5px);
-    border-left-color: var(--accent-color);
+    transition: all 0.3s ease;
 }
 
-.breadcrumb {
-    background: transparent;
-    padding: 0;
-    margin-bottom: 0;
+.gallery-thumbnails {
+    display: flex;
+    gap: 0.5rem;
+    justify-content: center;
+    flex-wrap: wrap;
 }
 
-.breadcrumb-item a {
-    color: rgba(255, 255, 255, 0.9);
-    text-decoration: none;
-    transition: color 0.3s ease;
+.thumbnail {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
 }
 
-.breadcrumb-item a:hover {
-    color: white;
-    text-decoration: underline;
+.thumbnail:hover {
+    transform: scale(1.05);
+    border-color: var(--primary-color);
 }
 
-.breadcrumb-item.active {
-    color: white;
-    font-weight: 500;
-}
-
-.breadcrumb-item + .breadcrumb-item::before {
-    color: rgba(255, 255, 255, 0.7);
+.thumbnail.active {
+    border-color: var(--primary-color);
+    box-shadow: 0 3px 10px rgba(37, 99, 235, 0.3);
 }
 
 /* Compact side cards */
@@ -233,6 +179,65 @@
 @keyframes pulse-bg {
     0%, 100% { transform: translate(-50%, -50%) scale(1); opacity: 0.2; }
     50% { transform: translate(-50%, -50%) scale(1.1); opacity: 0.1; }
+}
+
+.service-item {
+    background: #f8fafc;
+    border-radius: 15px;
+    padding: 1.5rem;
+    margin-bottom: 1rem;
+    border-left: 4px solid var(--primary-color);
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.service-item::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(37, 99, 235, 0.1), transparent);
+    transition: left 0.5s ease;
+}
+
+.service-item:hover::before {
+    left: 100%;
+}
+
+.service-item:hover {
+    background: white;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transform: translateX(5px);
+    border-left-color: var(--accent-color);
+}
+
+.breadcrumb {
+    background: transparent;
+    padding: 0;
+    margin-bottom: 0;
+}
+
+.breadcrumb-item a {
+    color: rgba(255, 255, 255, 0.9);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.breadcrumb-item a:hover {
+    color: white;
+    text-decoration: underline;
+}
+
+.breadcrumb-item.active {
+    color: white;
+    font-weight: 500;
+}
+
+.breadcrumb-item + .breadcrumb-item::before {
+    color: rgba(255, 255, 255, 0.7);
 }
 
 .faq-item {
@@ -363,11 +368,13 @@
         padding: 1.5rem;
     }
     
-    .service-icon-large {
-        width: 80px;
-        height: 80px;
-        font-size: 2rem;
-        border-radius: 20px;
+    .main-image {
+        height: 200px;
+    }
+    
+    .thumbnail {
+        width: 60px;
+        height: 60px;
     }
     
     .side-card .price {
@@ -409,6 +416,15 @@
     .breadcrumb {
         justify-content: center;
     }
+    
+    .gallery-thumbnails {
+        gap: 0.25rem;
+    }
+    
+    .thumbnail {
+        width: 50px;
+        height: 50px;
+    }
 }
 {% endblock %}
 
@@ -440,34 +456,21 @@
         <div class="row">
             <div class="col-lg-8">
                 <div class="service-detail-card fade-in">
-                    <div class="service-icon-large">
-                        <i class="{{ service_data.icon }}"></i>
-                    </div>
-                    <h2 class="text-center mb-4">{{ service_data.title }} Services</h2>
-                    <p class="text-center text-muted mb-5">We provide comprehensive {{ service_data.title.lower() }} solutions designed to meet your specific needs and ensure optimal performance. Our certified technicians use the latest tools and techniques to deliver exceptional results.</p>
-                    
-                    <h4 class="mb-4"><i class="fas fa-tools me-2 text-primary"></i>Our {{ service_data.title }} Services Include:</h4>
-                    <div class="row">
-                        {% for service in service_data.services %}
-                        <div class="col-md-6 mb-3">
-                            <div class="service-item">
-                                <i class="fas fa-check-circle text-success me-2"></i>
-                                <strong>{{ service }}</strong>
-                            </div>
-                        </div>
-                        {% endfor %}
-                    </div>
-                    
-                    <div class="mt-4 p-4 bg-light rounded-3">
-                        <h5 class="text-primary mb-3"><i class="fas fa-info-circle me-2"></i>Why Choose Our {{ service_data.title }} Services?</h5>
-                        <ul class="list-unstyled">
-                            <li class="mb-2"><i class="fas fa-star text-warning me-2"></i>Experienced and certified technicians</li>
-                            <li class="mb-2"><i class="fas fa-star text-warning me-2"></i>Fast response times and flexible scheduling</li>
-                            <li class="mb-2"><i class="fas fa-star text-warning me-2"></i>Competitive pricing with transparent quotes</li>
-                            <li class="mb-2"><i class="fas fa-star text-warning me-2"></i>100% satisfaction guarantee</li>
-                            <li class="mb-2"><i class="fas fa-star text-warning me-2"></i>Follow-up support and maintenance</li>
-                        </ul>
-                    </div>
+                    <!-- Image Gallery -->
+<div class="service-gallery">
+    <div class="gallery-main">
+        <img id="mainImage" src="{{ service_data.images.main }}" 
+             alt="{{ service_data.title }} Service" class="main-image">
+    </div>
+    <div class="gallery-thumbnails">
+        {% for thumbnail in service_data.images.thumbnails %}
+        <img src="{{ thumbnail }}" 
+             alt="{{ service_data.title }} Service {{ loop.index }}" 
+             class="thumbnail {% if loop.first %}active{% endif %}" 
+             onclick="changeImage(this, '{{ thumbnail }}')">
+        {% endfor %}
+    </div>
+</div>
                 </div>
 
                 <!-- FAQ Section -->
@@ -597,8 +600,8 @@
 </section>
 
 <!-- Related Services -->
-<section class="section-padding bg-light service-category-card">
-    <div class="container ">
+<section class="section-padding bg-light">
+    <div class="container">
         <h3 class="text-center mb-5"><i class="fas fa-lightbulb me-2 text-primary"></i>Other Services You Might Need</h3>
         <div class="row g-4">
             {% set other_services_count = (services_data.items()|selectattr('0', '!=', category)|list|length) %}
@@ -658,6 +661,18 @@
 {% endblock %}
 
 {% block extra_js %}
+// Image Gallery Functionality
+function changeImage(thumbnail, imageUrl) {
+    // Update main image
+    document.getElementById('mainImage').src = imageUrl;
+    
+    // Update active thumbnail
+    document.querySelectorAll('.thumbnail').forEach(img => {
+        img.classList.remove('active');
+    });
+    thumbnail.classList.add('active');
+}
+
 // Enhanced FAQ functionality
 document.addEventListener('DOMContentLoaded', function() {
     // FAQ icon rotation
