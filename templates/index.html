@@ -806,26 +806,26 @@
                     'text': 'TechAssist saved my business! When our network went down, they had us back online within hours. Professional, fast, and reasonably priced.',
                     'author': 'Sarah Johnson',
                     'role': 'Small Business Owner',
-                    'avatar': 'SJ'
+                    'avatar': 'https://randomuser.me/api/portraits/women/44.jpg'
                 },
                 {
                     'text': 'I thought my laptop was beyond repair, but TechAssist brought it back to life. Now it runs better than when it was new!',
                     'author': 'Michael Chen',
                     'role': 'Freelance Designer',
-                    'avatar': 'MC'
+                    'avatar': 'https://randomuser.me/api/portraits/men/32.jpg'
                 },
                 {
                     'text': 'The smart home setup they did for us is incredible. Everything works perfectly, and they explained how to use everything.',
                     'author': 'Emily Rodriguez',
                     'role': 'Homeowner',
-                    'avatar': 'ER'
+                    'avatar': 'https://randomuser.me/api/portraits/women/68.jpg'
                 }
             ] %}
             
             {% for testimonial in testimonials %}
-            <div class="col-lg-4">
+            <div class="col-md-6 col-lg-4">
                 <div class="testimonial-card fade-in">
-                    <div class="stars">
+                    <div class="stars" aria-label="5-star rating">
                         <i class="fas fa-star"></i>
                         <i class="fas fa-star"></i>
                         <i class="fas fa-star"></i>
@@ -833,10 +833,10 @@
                         <i class="fas fa-star"></i>
                     </div>
                     <p class="testimonial-text">"{{ testimonial.text }}"</p>
-                    <div class="testimonial-author">
-                        <div class="author-avatar">{{ testimonial.avatar }}</div>
+                    <div class="testimonial-author d-flex align-items-center mt-3">
+                        <img src="{{ testimonial.avatar }}" alt="{{ testimonial.author }}" class="author-avatar me-3">
                         <div class="author-info">
-                            <h6>{{ testimonial.author }}</h6>
+                            <h6 class="mb-0">{{ testimonial.author }}</h6>
                             <small>{{ testimonial.role }}</small>
                         </div>
                     </div>
@@ -846,6 +846,7 @@
         </div>
     </div>
 </section>
+
 
 <!-- CTA Section -->
 <section class="cta-section section-padding">
