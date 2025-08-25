@@ -13,12 +13,12 @@ SERVICES_DATA = {
         'icon': 'fas fa-home',
         'services': ['Thermostat', 'Video Doorbells', 'Hubs & Speakers', 'Garage Doors'],
         'images': {
-            'main': 'https://images.unsplash.com/photo-1558618047-3c8c76ca7d13?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80',
+            'main': 'https://plus.unsplash.com/premium_photo-1663054563006-a4d84cda7204?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
             'thumbnails': [
-                'https://images.unsplash.com/photo-1558618047-3c8c76ca7d13?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80',
+                'https://i.guim.co.uk/img/media/b24979809000cbc4cacbad76c6ada50f47ed90ea/0_0_5000_3000/master/5000.jpg?width=465&dpr=1&s=none&crop=none',
                 'https://images.unsplash.com/photo-1586953208448-b95a79798f07?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80',
-                'https://images.unsplash.com/photo-1545259741-2ea3ebf61fa0?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80',
-                'https://images.unsplash.com/photo-1556075798-4825dfaaf498?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80'
+                'https://images.pexels.com/photos/2651794/pexels-photo-2651794.jpeg?cs=srgb&dl=pexels-marinko-krsmanovic-700471-2651794.jpg&fm=jpg',
+                'https://media.istockphoto.com/id/183889666/photo/garage-door.jpg?s=612x612&w=0&k=20&c=SxSsbzWPNGwwsBJH_y9r7EDqv7sylpQagk3sM12SktE='
             ]
         }
     },
@@ -31,7 +31,7 @@ SERVICES_DATA = {
             'thumbnails': [
                 'https://images.unsplash.com/photo-1571003123894-1f0594d2b5d9?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80',
                 'https://images.unsplash.com/photo-1574375927938-d5a98e8ffe85?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80',
-                'https://images.unsplash.com/photo-1493020258366-be3ead61c85c?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80',
+                'https://images.unsplash.com/flagged/photo-1572609239482-d3a83f976aa0?q=80&w=1332&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
                 'https://images.unsplash.com/photo-1587825140708-dfaf72ae4b04?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80'
             ]
         }
@@ -46,7 +46,7 @@ SERVICES_DATA = {
                 'https://images.unsplash.com/photo-1581833971358-2c8b550f87b3?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80',
                 'https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80',
                 'https://images.unsplash.com/photo-1563453392212-326f5e854473?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80',
-                'https://images.unsplash.com/photo-1609585058196-31c2c2b4ad96?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80'
+                'https://t4.ftcdn.net/jpg/08/41/77/15/360_F_841771567_T2RFxdmNRP96zAzBIU9GTx30hfq7eA4D.jpg'
             ]
         }
     },
