@@ -583,6 +583,43 @@
     </div>
 </section>
 
+
+<section id="device-services" class="py-5 bg-light">
+  <div class="container">
+    <div class="text-center mb-4">
+      <h2 class="fw-bold">You!</h2>
+      <p class="lead mb-0">
+        From laptops to smartphones, printers to smart home devices – we've got your back with reliable assistance for all your gadgets.
+      </p>
+    </div>
+
+    <div class="row g-4">
+  {% set featured_services = [
+    ('computers_printers', 'Computer', 'Receive expert assistance for computers and printers from anywhere. Our technicians ensure optimal performance through troubleshooting, configuration, and maintenance services.', 'https://pcpackard.com/images/tech-support/desk-top-1.jpg'),
+    ('computers_printers', 'Printer & Scanner', 'We resolve printer and scanner-related issues, ensuring your devices run smoothly and efficiently, keeping you connected and productive at all times.', 'https://pcpackard.com/images/tech-support/printer-top.png'),
+    ('wifi_network', 'WiFi & Network', 'Ensure fast and secure WiFi connections at home or work. Our specialists optimize your network for peak performance and reliability.', 'https://pcpackard.com/images/tech-support/wifi-top-1.jpg'),
+    ('smart_home', 'Smart Home', 'Enhance your smart home with our configuration and management services. We ensure your devices function seamlessly for convenience and efficiency.', 'https://pcpackard.com/images/tech-support/speker-top-1.jpg')
+  ] %}
+  
+  {% for service_key, title, description, image in featured_services %}
+  <div class="col-12 col-sm-6 col-lg-3">
+    <div class="card h-100 shadow-sm">
+      <img
+        src="{{ image }}"
+        class="card-img-top" alt="{{ title }}"
+        loading="lazy">
+      <div class="card-body d-flex flex-column">
+        <h5 class="card-title mb-2">{{ title }}</h5>
+        <p class="card-text flex-grow-1">{{ description }}</p>
+        <a href="{{ url_for('service_category', category=service_key) }}" 
+           class="btn btn-outline-primary mt-2" 
+           aria-label="Read more about {{ title }} support">Read More</a>
+      </div>
+    </div>
+  </div>
+  {% endfor %}
+</div>
+
 <!-- Services Section -->
 <section class="section-padding bg-light">
     <div class="container">
@@ -592,47 +629,52 @@
         </p>
         
         {% set service_items = [
-            {
-                'image': 'https://images.unsplash.com/photo-1607799279861-4dd421887fb3?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80',
-                'title': 'WiFi & Network',
-                'link': 'wifi_network'
-            },
-            {
-                'image': 'https://images.unsplash.com/photo-1542393545-10f5cde2c810?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80',
-                'title': 'Computers & Printers',
-                'link': 'computers_printers'
-            },
-            {
-                'image': 'https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80',
-                'title': 'Mobile Devices',
-                'link': 'mobile_devices'
-            },
-            {
-                'image': 'https://images.unsplash.com/photo-1593359677879-a4bb92f829d1?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80',
-                'title': 'TV Mounting',
-                'link': 'tv_mounting'
-            },
-            {
-                'image': 'https://images.unsplash.com/photo-1590874103328-eac38a683ce7?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80',
-                'title': 'Smart Home',
-                'link': 'smart_home'
-            },
-            {
-                'image': 'https://images.unsplash.com/photo-1571003123894-1f0594d2b5d9?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80',
-                'title': 'Audio & Video',
-                'link': 'audio_video'
-            },
-            {
-                'image': 'https://images.unsplash.com/photo-1576013551627-0cc20b96c2a7?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80',
-                'title': 'Home Security',
-                'link': 'home_security'
-            },
-            {
-                'image': 'https://images.unsplash.com/photo-1581833971358-2c8b550f87b3?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80',
-                'title': 'Around The Home',
-                'link': 'around_home'
-            }
-        ] %}
+    {
+        'image': 'https://pcpackard.com/images/assist-you/1.png',
+        'title': 'Computer',
+        'link': 'computers_printers'
+    },
+    {
+        'image': 'https://pcpackard.com/images/assist-you/2.png',
+        'title': 'Printer And Scanner',
+        'link': 'computers_printers'
+    },
+    {
+        'image': 'https://pcpackard.com/images/assist-you/3.png',
+        'title': 'Wifi Network',
+        'link': 'wifi_network'
+    },
+    {
+        'image': 'https://pcpackard.com/images/assist-you/4.png',
+        'title': 'Email',
+        'link': 'email'
+    },
+    {
+        'image': 'https://pcpackard.com/images/assist-you/5.png',
+        'title': 'Antivirus',
+        'link': 'antivirus' 
+    },
+    {
+        'image': 'https://pcpackard.com/images/assist-you/6.png',
+        'title': 'Mobile and Tablet',
+        'link': 'mobile_devices' 
+    },
+    {
+        'image': 'https://pcpackard.com/images/assist-you/7.png',
+        'title': 'Audio and Video (Alexa)',
+        'link': 'audio_video' 
+    },
+    {
+        'image': 'https://pcpackard.com/images/assist-you/8.png',
+        'title': 'TV Mounting',
+        'link': 'tv_mounting' 
+    },
+    {
+        'image': 'https://pcpackard.com/images/assist-you/9.png',
+        'title': 'Home Security',
+        'link': 'home_security'  
+    }
+] %}
         
         <div class="services-grid">
             <!-- First row - 5 items -->

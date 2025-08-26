@@ -92,17 +92,17 @@ SERVICES_DATA = {
             ]
         }
     },
-    'tv_mounting': {
-        'title': 'TV Mounting',
-        'icon': 'fas fa-tv',
-        'services': ['TV Dismount or Remount', 'TV Mounting (up to 32")', 'TV Mounting (33"-60")', 'TV Mounting (61" or larger)', 'TV Wire In-Wall Concealment'],
+    'antivirus': {
+        'title': 'Antivirus',
+        'icon': 'fas fa-shield-virus',
+        'services': ['Virus Removal', 'Antivirus Installation', 'Malware Protection', 'Security Scanning'],
         'images': {
-            'main': 'https://images.unsplash.com/photo-1593359677879-a4bb92f829d1?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80',
+            'main': 'https://images.unsplash.com/photo-1563013544-824ae1b704d3?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80',
             'thumbnails': [
-                'https://images.unsplash.com/photo-1593359677879-a4bb92f829d1?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80',
-                'https://images.unsplash.com/photo-1567690187548-f07b1d7bf5a9?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80',
-                'https://images.unsplash.com/photo-1574375927938-d5a98e8ffe85?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80',
-                'https://images.unsplash.com/photo-1571003123894-1f0594d2b5d9?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80'
+                'https://images.unsplash.com/photo-1563013544-824ae1b704d3?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80',
+                'https://images.unsplash.com/photo-1544197150-b99a580bb7a8?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80',
+                'https://images.unsplash.com/photo-1614064641938-3bbee52942c0?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80',
+                'https://images.unsplash.com/photo-1533750349088-cd871a92f312?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80'
             ]
         }
     },
@@ -119,7 +119,39 @@ SERVICES_DATA = {
                 'https://images.unsplash.com/photo-1612198188060-c7c2a3b66eae?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80'
             ]
         }
-    }
+    },
+    'tv_mounting': {
+        'title': 'TV Mounting',
+        'icon': 'fas fa-tv',
+        'services': ['TV Dismount or Remount', 'TV Mounting (up to 32")', 'TV Mounting (33"-60")', 'TV Mounting (61" or larger)', 'TV Wire In-Wall Concealment'],
+        'images': {
+            'main': 'https://images.unsplash.com/photo-1593359677879-a4bb92f829d1?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80',
+            'thumbnails': [
+                'https://images.unsplash.com/photo-1593359677879-a4bb92f829d1?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80',
+                'https://images.unsplash.com/photo-1567690187548-f07b1d7bf5a9?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80',
+                'https://images.unsplash.com/photo-1574375927938-d5a98e8ffe85?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80',
+                'https://images.unsplash.com/photo-1571003123894-1f0594d2b5d9?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80'
+            ]
+        }
+    },
+    
+    
+    'email': {
+        'title': 'Email',
+        'icon': 'fas fa-envelope',
+        'services': ['Email Setup', 'Email Troubleshooting', 'Email Configuration'],
+        'images': {
+            'main': 'https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80',
+            'thumbnails': [
+                'https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80',
+                'https://images.unsplash.com/photo-1516339901601-2e1b62dc0c45?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80',
+                'https://images.unsplash.com/photo-1577563908411-5077b6dc7624?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80',
+                'https://images.unsplash.com/photo-1611605698335-8b1569810432?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80'
+            ]
+        }
+    },
+    
+    
 }
 
 @app.route('/')
