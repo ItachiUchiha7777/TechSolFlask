@@ -6,7 +6,7 @@ SERVICES_DATA = {
             'Thermostat': {
                 'price': '$99.00 USD',
                 'description': 'Professional thermostat installation and setup',
-                'image': 'https://images.unsplash.com/photo-1545558014-8692077e9b5c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+                'image': 'https://media.istockphoto.com/id/621588062/photo/thermostat-home-energy-saving.jpg?s=612x612&w=0&k=20&c=v7ZFrlqPgIrAFJhKpalTdOHk2ZGlyUjjh9LYDvQFvN8=',
                 'details': [
                     'Evaluate the thermostat to ensure it is functioning properly',
                     'Confirm that the device is correctly connected to the WiFi network',
@@ -19,7 +19,7 @@ SERVICES_DATA = {
             'Video Doorbells': {
                 'price': '$129.00 USD',
                 'description': 'Video doorbell installation and configuration',
-                'image': 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+                'image': 'https://cdn.mos.cms.futurecdn.net/9WoktxCUG9Ekzz6EBEwnmj.jpg',
                 'details': [
                     'Install and mount the video doorbell securely',
                     'Connect to your home WiFi network',
@@ -45,7 +45,7 @@ SERVICES_DATA = {
             'Garage Doors': {
                 'price': '$179.00 USD',
                 'description': 'Smart garage door opener installation',
-                'image': 'https://images.unsplash.com/photo-1586953208448-b95a79798f07?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+                'image': 'https://hips.hearstapps.com/hmg-prod/images/things-you-should-never-store-in-the-garage-64639b1b8f376.jpg?crop=0.8888888888888888xw:1xh;center,top&resize=1200:*',
                 'details': [
                     'Install smart garage door controller',
                     'Connect to your home WiFi network',
@@ -73,7 +73,7 @@ SERVICES_DATA = {
             'Home Theater': {
                 'price': '$249.00 USD',
                 'description': 'Complete home theater system setup',
-                'image': 'https://images.unsplash.com/photo-1571003123894-1f0594d2b5d9?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+                'image': 'https://hips.hearstapps.com/hmg-prod/images/fun-lighting-64b433f17a68a.png?crop=0.8978675645342312xw:1xh;center,top&resize=1200:*',
                 'details': [
                     'Unpack and organize all components',
                     'Connect audio/video receivers, speakers, and display',
@@ -86,7 +86,7 @@ SERVICES_DATA = {
             'Universal Remote': {
                 'price': '$79.00 USD',
                 'description': 'Universal remote programming and setup',
-                'image': 'https://images.unsplash.com/photo-1633265486064-086b219458ec?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+                'image': 'https://cdn.thewirecutter.com/wp-content/media/2024/09/universalremotecontrols-2048px-group.jpg',
                 'details': [
                     'Program remote to control all your entertainment devices',
                     'Set up macros for one-touch operation of multiple devices',
@@ -99,7 +99,7 @@ SERVICES_DATA = {
             'Advanced Audio Systems': {
                 'price': '$199.00 USD',
                 'description': 'High-end audio system installation',
-                'image': 'https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+                'image': 'https://blog.ecny.net/images/easyblog_articles/228/ELECON_November_Blog1_High-End-Audio_Franklin-LakesNJ_Photo.JPG',
                 'details': [
                     'Setup multi-room audio systems',
                     'Configure whole-house audio distribution',
@@ -176,10 +176,10 @@ SERVICES_DATA = {
                     'Basic assembly service (up to 2 hours)'
                 ]
             },
-            'Holiday Light Hanging / Removal': {
+            'Holiday Light Hanging or Removal': {
                 'price': '$149.00 USD',
                 'description': 'Holiday lighting services',
-                'image': 'https://images.unsplash.com/photo-1513475382585-d06e58bcb0e0?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+                'image': 'https://wehanglightsforyou.com/wp-content/uploads/2024/01/lights.png',
                 'details': [
                     'Safely hang holiday lights on home exterior',
                     'Use proper clips and hangers to avoid damage',
@@ -205,7 +205,7 @@ SERVICES_DATA = {
             'General Handyman': {
                 'price': '$89.00 USD/hour',
                 'description': 'General handyman services',
-                'image': 'https://images.unsplash.com/photo-1609013259117-565b3aafc7f6?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+                'image': 'https://homecareandrepair.com/wp-content/uploads/2023/11/115954375_l_normal_none-scaled.jpg',
                 'details': [
                     'Minor home repairs and maintenance',
                     'Small installation projects',
@@ -233,7 +233,7 @@ SERVICES_DATA = {
             'Routers': {
                 'price': '$119.00 USD',
                 'description': 'Router setup and optimization',
-                'image': 'https://images.unsplash.com/photo-1544717302-de2939b7ef71?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+                'image': 'https://www.avg.com/hs-fs/hubfs/Blog_Content/Avg/Signal/AVG%20Signal%20Images/what_is_a_router_and_what_does_it_do_signal/Signal-What-is-a-Router-and-What-Does-it-Do-Hero.jpg?width=1200&name=Signal-What-is-a-Router-and-What-Does-it-Do-Hero.jpg',
                 'details': [
                     'Unbox and properly position your new router',
                     'Connect to modem and configure internet connection',
@@ -246,7 +246,7 @@ SERVICES_DATA = {
             'In-Wall Cable Running': {
                 'price': '$199.00 USD',
                 'description': 'Professional cable installation',
-                'image': 'https://images.unsplash.com/photo-1558494949-ef010cbdcc31?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+                'image': 'https://www.customavi.ca/wp-content/uploads/2024/08/IMG_1896.jpg',
                 'details': [
                     'Plan optimal cable routing paths',
                     'Safely run Ethernet cables through walls',
@@ -268,13 +268,13 @@ SERVICES_DATA = {
         }
     },
     'home_security': {
-        'title': 'Home Security',
+        'title': 'Home Security',   
         'icon': 'fas fa-shield-alt',
         'services': {
             'Cameras': {
                 'price': '$179.00 USD',
                 'description': 'Security camera installation',
-                'image': 'https://images.unsplash.com/photo-1582139329536-e7284fece509?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+                'image': 'https://assets-news.housing.com/news/wp-content/uploads/2021/12/10180537/Home-security-cameras-Wireless-and-other-CCTV-cameras%E2%80%99-guide-and-installation-tips-FB-1200x700-compressed.jpg',
                 'details': [
                     'Determine optimal camera placement for coverage',
                     'Mount cameras securely indoors or outdoors',
@@ -287,7 +287,7 @@ SERVICES_DATA = {
             'Locks': {
                 'price': '$129.00 USD',
                 'description': 'Smart lock installation',
-                'image': 'https://images.unsplash.com/photo-1558036117-15d82a90b9b1?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+                'image': 'https://www.ozokart.com/cdn/shop/articles/image5_8970eb36-24f1-4660-8e47-11706a4f397d.jpg?v=1747032250',
                 'details': [
                     'Install smart lock on existing door',
                     'Configure access codes and user permissions',
@@ -300,7 +300,7 @@ SERVICES_DATA = {
             'Alarm Systems': {
                 'price': '$249.00 USD',
                 'description': 'Security system installation',
-                'image': 'https://images.unsplash.com/photo-1558618047-3c8c76ca7d13?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+                'image': 'https://www.gensecurity.com/hs-fs/hubfs/Blog/How-An-Alarm-System-Works.jpg?width=1000&name=How-An-Alarm-System-Works.jpg',
                 'details': [
                     'Install control panel and sensors throughout home',
                     'Configure alarm zones and detection settings',
@@ -356,7 +356,7 @@ SERVICES_DATA = {
             'Computers': {
                 'price': '$99.00 USD',
                 'description': 'Computer setup and optimization',
-                'image': 'https://images.unsplash.com/photo-1527864550417-7fd91fc51a46?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+                'image': '  https://static.invenglobal.com/upload/image/2020/08/13/o1597361719998783.jpeg',
                 'details': [
                     'Set up new computer and peripheral devices',
                     'Install necessary software and applications',
@@ -369,7 +369,7 @@ SERVICES_DATA = {
             'Printers': {
                 'price': '$89.00 USD',
                 'description': 'Printer installation and setup',
-                'image': 'https://images.unsplash.com/photo-1612198188060-c7c2a3b66eae?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+                'image': 'https://cdn.thewirecutter.com/wp-content/media/2022/12/instant-photo-printer-2048px-6769.jpg?auto=webp&quality=75&width=1024',
                 'details': [
                     'Unbox and assemble printer components',
                     'Connect to computer and network',
@@ -423,7 +423,7 @@ SERVICES_DATA = {
             'TV Mounting (33"-60")': {
                 'price': '$149.00 USD',
                 'description': 'Medium TV mounting service',
-                'image': 'https://images.unsplash.com/photo-1574375927938-d5a98e8ffe85?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+                'image': 'https://www.mount-it.com/cdn/shop/articles/how-to-choose-a-tv-wall-mount-691267_86436927-affe-4c10-9274-a874b625da05.jpg?v=1751400976',
                 'details': [
                     'Professional mounting for medium-sized TVs',
                     'Use heavy-duty mount appropriate for larger TVs',
@@ -436,7 +436,7 @@ SERVICES_DATA = {
             'TV Mounting (61" or larger)': {
                 'price': '$199.00 USD',
                 'description': 'Large TV mounting service',
-                'image': 'https://images.unsplash.com/photo-1571003123894-1f0594d2b5d9?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+                'image': 'https://www.mount-it.com/cdn/shop/articles/how-to-choose-a-tv-wall-mount-691267_86436927-affe-4c10-9274-a874b625da05.jpg?v=1751400976',
                 'details': [
                     'Expert mounting for large, heavy TVs',
                     'Use commercial-grade mounting hardware',
@@ -449,7 +449,7 @@ SERVICES_DATA = {
             'TV Wire In-Wall Concealment': {
                 'price': '$129.00 USD',
                 'description': 'Professional wire concealment',
-                'image': 'https://images.unsplash.com/photo-1555685812-4b943f1cb0eb?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+                'image': 'https://www.mount-it.com/cdn/shop/articles/how-to-choose-a-tv-wall-mount-691267_86436927-affe-4c10-9274-a874b625da05.jpg?v=1751400976',
                 'details': [
                     'Plan optimal cable routing through walls',
                     'Cut precise openings for wall plates',

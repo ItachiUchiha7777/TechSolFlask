@@ -289,10 +289,14 @@
                     {% for service_key, service_info in chunk %}
                     <div class="service-category mb-4">
                         <h6 class="fw-bold text-primary mb-2">
-                            <i class="{{ service_info.icon }} me-2"></i>
-                            <a href="{{ url_for('service_category', category=service_key) }}" class="text-decoration-none text-primary">
+                            <i class="{{ service_info.icon }} me-2"> </i>
+                            
+                                 <a href="{{ url_for('service_category', category=service_key) }}" class="text-decoration-none text-primary">
                                 {{ service_info.title }}
                             </a>
+                                
+                                {#<p class="text-decoration-none text-primary"> {{ service_info.title }}</p> #}
+                           
                         </h6>
                         <ul class="list-unstyled">
                             {% for service_name, service_details in service_info.services.items() %}
@@ -313,6 +317,9 @@
     </div>
 </li>
 
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ url_for('partner') }}">Partner with us</a>
+                    </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#process">How It Works</a>
                     </li>

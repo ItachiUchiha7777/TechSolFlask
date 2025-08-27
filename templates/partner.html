@@ -1,0 +1,453 @@
+{% extends "base.html" %}
+
+{% block title %}Partner With Us - I Tech Software Services{% endblock %}
+
+{% block extra_css %}
+.page-title-area {
+    background-size: cover;
+    background-position: top;
+    background-repeat: no-repeat;
+    padding: 8rem 0 4rem;
+    margin-top: 76px;
+    position: relative;
+    color: white;
+    text-align: center;
+}
+
+.page-title-area::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    <!-- background: linear-gradient(135deg, rgba(37, 99, 235, 0.8), rgba(14, 165, 233, 0.8)); -->
+}
+
+.d-table {
+    display: table;
+    width: 100%;
+    height: 300px;
+}
+
+.d-table-cell {
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.page-title-content {
+    position: relative;
+    z-index: 1;
+}
+
+.page-title-content h2 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+
+.page-title-content ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.page-title-content ul li {
+    display: inline-block;
+}
+
+.page-title-content ul li a {
+    color: white;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.page-title-content ul li a:hover {
+    text-decoration: underline;
+}
+
+.section-heading {
+    font-size: 2rem;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 1rem;
+    color: var(--text-dark);
+}
+
+.about-content-text {
+    margin-bottom: 2rem;
+}
+
+.about-content-text h2 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+}
+
+.about-content-text p {
+    color: var(--text-light);
+    line-height: 1.6;
+}
+
+.about-image img {
+    width: 100%;
+    border-radius: 15px;
+    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.1);
+}
+
+.product-card {
+    background: white;
+    border-radius: 15px;
+    padding: 2rem;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+    height: auto%;
+    transition: all 0.3s ease;
+}
+
+.product-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+}
+
+.product-image {
+    width: 100%;
+    border-radius: 10px;
+    margin-bottom: 1.5rem;
+}
+
+.product-title {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--primary-color);
+    margin-bottom: 1.5rem;
+}
+
+.accordion-item {
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+    overflow: hidden;
+}
+
+.accordion-button {
+    background: #f8fafc;
+    border: none;
+    padding: 1.25rem;
+    font-weight: 600;
+    color: var(--text-dark);
+    transition: all 0.3s ease;
+}
+
+.accordion-button:not(.collapsed) {
+    background: var(--primary-color);
+    color: white;
+    box-shadow: none;
+}
+
+.accordion-button:focus {
+    box-shadow: none;
+    border-color: #e2e8f0;
+}
+
+.accordion-body {
+    padding: 1.25rem;
+    background: white;
+}
+
+.accordion-body ul {
+    padding-left: 1.5rem;
+    margin-bottom: 0;
+}
+
+.accordion-body li {
+    margin-bottom: 0.5rem;
+    color: var(--text-light);
+}
+
+.accordion-button::after {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23212529'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e");
+}
+
+.accordion-button:not(.collapsed)::after {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23fff'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e");
+}
+
+.fade-in {
+    opacity: 0;
+    transform: translateY(30px);
+    animation: fadeInUp 0.8s ease forwards;
+}
+
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (max-width: 768px) {
+    .page-title-area {
+        padding: 6rem 0 3rem;
+    }
+    
+    .d-table {
+        height: 200px;
+    }
+    
+    .page-title-content h2 {
+        font-size: 2rem;
+    }
+    
+    .section-heading {
+        font-size: 1.75rem;
+    }
+    
+    .product-card {
+        padding: 1.5rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .page-title-content ul {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+    
+    .accordion-button {
+        padding: 1rem;
+        font-size: 0.95rem;
+    }
+    
+    .accordion-body {
+        padding: 1rem;
+    }
+}
+{% endblock %}
+
+{% block content %}
+<!-- Page Title Area -->
+<div class="page-title-area" style="background-image: url('https://pcpackard.com/images/partners-ship.jpg');">
+    <div class="d-table">
+        <div class="d-table-cell">
+            <div class="container">
+                <div class="page-title-content text-white">
+                    <h2>Partner With Us</h2>
+                    <ul>
+                        <li><a href="{{ url_for('index') }}" class="text-white">Home</a></li>
+                        <li>Partner With Us</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- About Area -->
+<section class="section-padding">
+    <div class="container">
+        <!-- Section Heading -->
+        <div class="text-center mb-5">
+            <h2 class="section-heading">We have helped 500+ brands till now</h2>
+            <h3 class="text-muted">The effectiveness of configuration products relies on proper installation, configuration, and ongoing support services.</h3>
+        </div>
+        
+        <div class="row d-flex align-items-center">
+            <div class="col-lg-6 col-md-12 col-sm-12">
+                <div class="about-content">
+                    <div class="about-content-text fade-in">
+                        <h2>Customized Solutions</h2>
+                        <p>Tailored configuration services that meet the unique needs of your business for maximum efficiency.</p>
+                    </div>
+                    <div class="about-content-text fade-in">
+                        <h2>Ongoing Support</h2>
+                        <p>We provide continuous support to ensure your systems stay updated, secure, and fully functional.</p>
+                    </div>
+                    <div class="about-content-text fade-in">
+                        <h2>Efficient Implementation</h2>
+                        <p>Our team ensures quick and effective installation to minimize downtime and keep your operations running smoothly.</p>
+                    </div>
+                    <div class="about-content-text fade-in">
+                        <h2>Scalable Services</h2>
+                        <p>As your business grows, we offer scalable configuration solutions to accommodate expanding needs and new challenges.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-5 offset-lg-1 col-md-12 col-sm-12">
+                <div class="about-image fade-in">
+                    <img src="https://pcpackard.com/assets/img/about.jpg" alt="Partnership image" class="img-fluid">
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- iPad Essentials Section -->
+<section class="section-padding bg-light">
+    <div class="container">
+        <!-- Section Heading -->
+        <div class="text-center mb-5">
+            <h2 class="section-heading">I Tech Software Services Effortlessly Enhances Your Value Proposition</h2>
+        </div>
+        
+        <div class="row">
+            <!-- Content Card -->
+            <div class="col-lg-12 col-md-12 mb-5 fade-in">
+                <div class="row">
+                    <div class="col-lg-6 col-md-6 mb-4">
+                        <div class="product-card text-center">
+                            <img src="https://pcpackard.com/assets/img/portfolio/map.jpg" alt="Partnership Map" class="product-image">
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-md-6">
+                        <div class="product-card">
+                            <h3 class="product-title">I Tech Software Services ensures your customers experience the full potential of...</h3>
+                            <div class="accordion faq-width" id="bookingManagment">
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header" id="headingNine">
+                                        <button class="accordion-button show" type="button" data-bs-toggle="collapse"
+                                            data-bs-target="#collapseNine" aria-expanded="true" aria-controls="collapseNine">
+                                            1. Instant access to our top-tier technician network.
+                                        </button>
+                                    </h2>
+                                    <div id="collapseNine" class="accordion-collapse collapse show"
+                                        aria-labelledby="headingNine" data-bs-parent="#bookingManagment">
+                                        <div class="accordion-body">
+                                            <ul>
+                                                <li>Global technician support, available wherever your customers are located.</li>
+                                                <li>Technicians ready 24/7 for immediate assistance and urgent needs.</li>
+                                                <li>Certified, expert technicians ensuring top-quality service and support.</li>
+                                                <li>Quick response times to minimize downtime and technical issues.</li>
+                                                <li>Customized solutions tailored to your customers' specific technical requirements.</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header" id="headingTen">
+                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                            data-bs-target="#collapseTen" aria-expanded="false" aria-controls="collapseTen">
+                                            2. Dedicated and expert teams.
+                                        </button>
+                                    </h2>
+                                    <div id="collapseTen" class="accordion-collapse collapse" aria-labelledby="headingTen"
+                                        data-bs-parent="#bookingManagment">
+                                        <div class="accordion-body">
+                                            <ul>
+                                                <li>Specialized teams offering expert assistance in various configuration fields.</li>
+                                                <li>Personalized, dedicated support tailored to each customer's unique needs.</li>
+                                                <li>Proactive monitoring to prevent issues before they become problems.</li>
+                                                <li>Highly efficient problem-solving to reduce operational impact quickly.</li>
+                                                <li>Friendly, professional service focused on customer satisfaction and care.</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header" id="headingEleven">
+                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                            data-bs-target="#collapseEleven" aria-expanded="false"
+                                            aria-controls="collapseEleven">
+                                            3. Transparent process.
+                                        </button>
+                                    </h2>
+                                    <div id="collapseEleven" class="accordion-collapse collapse" aria-labelledby="headingEleven"
+                                        data-bs-parent="#bookingManagment">
+                                        <div class="accordion-body">
+                                            <ul>
+                                                <li>Open communication, keeping customers informed at every service stage.</li>
+                                                <li>Detailed service reports outlining each step for complete transparency.</li>
+                                                <li>No hidden fees or unexpected costs in our pricing.</li>
+                                                <li>Regular updates ensure you're always aware of progress.</li>
+                                                <li>Client approval required before major changes or implementations occur.</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header" id="headingEleven1">
+                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                            data-bs-target="#collapseEleven1" aria-expanded="false"
+                                            aria-controls="collapseEleven1">
+                                            4. Affordability guaranteed: lowest price.
+                                        </button>
+                                    </h2>
+                                    <div id="collapseEleven1" class="accordion-collapse collapse"
+                                        aria-labelledby="headingEleven1" data-bs-parent="#bookingManagment">
+                                        <div class="accordion-body">
+                                            <ul>
+                                                <li>Competitive pricing without sacrificing quality or service reliability.</li>
+                                                <li>Cost-effective solutions focused on reducing long-term operational expenses.</li>
+                                                <li>Affordable, flexible packages designed to meet your specific needs.</li>
+                                                <li>Transparent pricing, ensuring no hidden fees or extra charges.</li>
+                                                <li>Guaranteed value, combining low cost with high-quality service.</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Call to Action -->
+<section class="section-padding bg-primary text-white">
+    <div class="container text-center">
+        <div class="row justify-content-center">
+            <div class="col-lg-8">
+                <h3 class="mb-4">Ready to Partner With Us?</h3>
+                <p class="lead mb-4">Join our network of partners and provide exceptional technical support services to your customers.</p>
+                <div class="d-flex flex-column flex-sm-row gap-3 justify-content-center">
+                    <a href="{{ url_for('contact') }}?subject=Partnership" class="btn btn-light btn-lg">
+                        <i class="fas fa-handshake me-2"></i>Become a Partner
+                    </a>
+                    <a href="tel:+18003424999" class="btn btn-outline-light btn-lg">
+                        <i class="fas fa-phone me-2"></i>Call Now
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}
+
+{% block extra_js %}
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // Animation on scroll for elements with fade-in class
+        const fadeElements = document.querySelectorAll('.fade-in');
+        
+        const fadeObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.animationDelay = '0.1s';
+                    entry.target.style.opacity = '1';
+                }
+            });
+        }, { threshold: 0.1 });
+
+        fadeElements.forEach(element => {
+            fadeObserver.observe(element);
+        });
+        
+        // Initialize all accordions
+        const accordions = document.querySelectorAll('.accordion-button');
+        accordions.forEach(button => {
+            button.addEventListener('click', function() {
+                const icon = this.querySelector('i');
+                if (icon) {
+                    icon.classList.toggle('fa-chevron-down');
+                    icon.classList.toggle('fa-chevron-up');
+                }
+            });
+        });
+    });
+</script>
+{% endblock %}
