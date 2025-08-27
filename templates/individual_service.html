@@ -1,0 +1,657 @@
+{% extends "base.html" %}
+
+{% block title %}{{ service_info.name }} - {{ category|title }} - I Tech Software Services{% endblock %}
+
+{% block extra_css %}
+.page-header {
+    background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+    color: white;
+    padding: 8rem 0 4rem;
+    margin-top: 76px;
+    position: relative;
+    overflow: hidden;
+}
+
+.page-header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="2" fill="white" opacity="0.1"/></svg>');
+    background-size: 50px 50px;
+}
+
+.breadcrumb-container {
+    background: rgba(0, 0, 0, 0.2);
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+    display: inline-block;
+    margin-bottom: 1.5rem;
+}
+
+.service-detail-card {
+    background: white;
+    border-radius: 20px;
+    padding: 3rem;
+    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.1);
+    margin-bottom: 2rem;
+    transition: all 0.3s ease;
+}
+
+.service-detail-card:hover {
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+}
+
+.side-card {
+    background: white;
+    border-radius: 20px;
+    padding: 1.5rem;
+    text-align: center;
+    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.1);
+    margin-bottom: 1.5rem;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    height: auto;
+}
+
+.side-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+}
+
+.side-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+}
+
+.side-card .price {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    margin: 0.5rem 0;
+}
+
+.side-card .compact-list {
+    margin: 1rem 0;
+    padding: 0;
+    list-style: none;
+}
+
+.side-card .compact-list li {
+    margin-bottom: 0.5rem;
+    font-size: 0.9rem;
+    text-align: left;
+}
+
+.side-card .btn {
+    padding: 0.6rem 1.2rem;
+    font-size: 0.95rem;
+    margin-top: 0.5rem;
+}
+
+.emergency-callout {
+    background: linear-gradient(135deg, #ef4444, #dc2626);
+    color: white;
+    border-radius: 20px;
+    padding: 1.5rem;
+    text-align: center;
+    margin-bottom: 1.5rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.emergency-callout::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 150px;
+    height: 150px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    animation: pulse-bg 3s ease-in-out infinite;
+}
+
+@keyframes pulse-bg {
+    0%, 100% { transform: translate(-50%, -50%) scale(1); opacity: 0.2; }
+    50% { transform: translate(-50%, -50%) scale(1.1); opacity: 0.1; }
+}
+
+.service-item {
+    background: #f8fafc;
+    border-radius: 15px;
+    padding: 1.5rem;
+    margin-bottom: 1rem;
+    border-left: 4px solid var(--primary-color);
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.service-item::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(37, 99, 235, 0.1), transparent);
+    transition: left 0.5s ease;
+}
+
+.service-item:hover::before {
+    left: 100%;
+}
+
+.service-item:hover {
+    background: white;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transform: translateX(5px);
+    border-left-color: var(--accent-color);
+}
+
+.breadcrumb {
+    background: transparent;
+    padding: 0;
+    margin-bottom: 0;
+}
+
+.breadcrumb-item a {
+    color: rgba(255, 255, 255, 0.9);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.breadcrumb-item a:hover {
+    color: white;
+    text-decoration: underline;
+}
+
+.breadcrumb-item.active {
+    color: white;
+    font-weight: 500;
+}
+
+.breadcrumb-item + .breadcrumb-item::before {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.faq-item {
+    background: white;
+    border-radius: 15px;
+    margin-bottom: 1rem;
+    border: 1px solid #e2e8f0;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.faq-item:hover {
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.faq-button {
+    background: none;
+    border: none;
+    padding: 1.5rem;
+    width: 100%;
+    text-align: left;
+    font-weight: 600;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.faq-button:hover {
+    background: #f8fafc;
+    color: var(--primary-color);
+}
+
+.faq-button i {
+    transition: transform 0.3s ease;
+}
+
+.faq-button[aria-expanded="true"] i {
+    transform: rotate(180deg);
+}
+
+.faq-content {
+    padding: 0 1.5rem 1.5rem;
+    color: var(--text-light);
+    line-height: 1.6;
+}
+
+.service-category-card {
+    background: white;
+    border-radius: 20px;
+    padding: 2rem 1.5rem;
+    text-align: center;
+    transition: all 0.3s ease;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+}
+
+.service-category-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(37, 99, 235, 0.05), transparent);
+    transition: left 0.5s ease;
+}
+
+.service-category-card:hover::before {
+    left: 100%;
+}
+
+.service-category-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+    border-color: var(--primary-color);
+}
+
+.category-icon {
+    background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    margin-bottom: 1rem;
+    transition: all 0.3s ease;
+}
+
+.service-category-card:hover .category-icon {
+    transform: scale(1.1);
+}
+
+.centered-card {
+    display: flex;
+    justify-content: center;
+}
+
+.centered-card .service-category-card {
+    max-width: 400px;
+    width: 100%;
+}
+
+.fade-in {
+    animation: fadeIn 0.8s ease forwards;
+    opacity: 0;
+}
+
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+    }
+}
+
+.detail-list {
+    list-style: none;
+    padding: 0;
+}
+
+.detail-list li {
+    padding: 0.75rem 0;
+    border-bottom: 1px solid #f1f5f9;
+    display: flex;
+    align-items: flex-start;
+}
+
+.detail-list li:last-child {
+    border-bottom: none;
+}
+
+.detail-list li i {
+    color: var(--primary-color);
+    margin-right: 1rem;
+    margin-top: 0.25rem;
+    flex-shrink: 0;
+}
+
+@media (max-width: 768px) {
+    .page-header {
+        padding: 6rem 0 3rem;
+        text-align: center;
+    }
+    
+    .service-detail-card {
+        padding: 1.5rem;
+    }
+    
+    .side-card .price {
+        font-size: 1.75rem;
+    }
+    
+    .service-item {
+        padding: 1rem;
+    }
+    
+    .faq-button {
+        padding: 1rem;
+        font-size: 0.95rem;
+    }
+    
+    .faq-content {
+        padding: 0 1rem 1rem;
+    }
+    
+    .side-card {
+        padding: 1.25rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .service-item:hover {
+        transform: none;
+    }
+    
+    .side-card:hover, .service-category-card:hover {
+        transform: none;
+    }
+    
+    .breadcrumb-container {
+        width: 100%;
+        text-align: center;
+    }
+    
+    .breadcrumb {
+        justify-content: center;
+    }
+}
+{% endblock %}
+
+{% block content %}
+<!-- Page Header -->
+<section class="page-header">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <div class="breadcrumb-container">
+                    <nav aria-label="breadcrumb">
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item"><a href="{{ url_for('index') }}">Home</a></li>
+                            <li class="breadcrumb-item"><a href="{{ url_for('services') }}">Services</a></li>
+                            <li class="breadcrumb-item"><a href="{{ url_for('service_category', category=category) }}">{{ services_data[category].title }}</a></li>
+                            <li class="breadcrumb-item active">{{ service_name }}</li>
+                        </ol>
+                    </nav>
+                </div>
+                <h1 class="display-4 fw-bold mb-4">{{ service_name }}</h1>
+                <p class="lead">{{ service_info.description }}</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Service Detail -->
+<section class="section-padding">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8">
+                 <img src="{{ service_info.image }}" 
+         alt="{{ service_name }}" 
+         class="img-fluid rounded mb-4" 
+         style="width: 100%; height: 500px; object-fit: cover;">
+                <div class="service-detail-card fade-in">
+                    <h3 class="mb-4"><i class="fas fa-info-circle me-2 text-primary"></i>Service Details</h3>
+                    
+                    <ul class="detail-list">
+                        {% for detail in service_info.details %}
+                        <li>
+                            <i class="fas fa-check-circle"></i>
+                            <span>{{ detail }}</span>
+                        </li>
+                        {% endfor %}
+                    </ul>
+                     <a href="{{ url_for('contact') }}?service={{ service_name }}" 
+       class="btn btn-primary w-50 d-block mx-auto mt-2">
+       Book This Service
+    </a>
+                </div>
+
+                <!-- FAQ Section -->
+                <div class="service-detail-card fade-in">
+                    <h3 class="mb-4"><i class="fas fa-question-circle me-2 text-primary"></i>Frequently Asked Questions</h3>
+                    
+                    <div class="accordion" id="serviceFaqs">
+                        <div class="faq-item">
+                            <button class="faq-button" type="button" data-bs-toggle="collapse" data-bs-target="#faq1" aria-expanded="false" aria-controls="faq1">
+                                How quickly can you respond to service requests?
+                                <i class="fas fa-chevron-down"></i>
+                            </button>
+                            <div id="faq1" class="collapse" data-bs-parent="#serviceFaqs">
+                                <div class="faq-content">
+                                    We typically respond to service requests within 2-4 hours during business hours. For urgent issues, we offer same-day service appointments, and emergency support is available 24/7 for critical situations.
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="faq-item">
+                            <button class="faq-button" type="button" data-bs-toggle="collapse" data-bs-target="#faq2" aria-expanded="false" aria-controls="faq2">
+                                Do you provide both on-site and remote support?
+                                <i class="fas fa-chevron-down"></i>
+                            </button>
+                            <div id="faq2" class="collapse" data-bs-parent="#serviceFaqs">
+                                <div class="faq-content">
+                                    Yes! We offer both on-site visits and remote support depending on your needs and the nature of the technical issue. Remote support is often faster and more cost-effective for software-related problems, while hardware issues typically require on-site service.
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="faq-item">
+                            <button class="faq-button" type="button" data-bs-toggle="collapse" data-bs-target="#faq3" aria-expanded="false" aria-controls="faq3">
+                                What areas do you service?
+                                <i class="fas fa-chevron-down"></i>
+                            </button>
+                            <div id="faq3" class="collapse" data-bs-parent="#serviceFaqs">
+                                <div class="faq-content">
+                                    We provide services throughout the San Francisco Bay Area, including San Francisco, Oakland, San Jose, and surrounding communities. Contact us to confirm service availability in your specific location and discuss any travel fees that may apply.
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="faq-item">
+                            <button class="faq-button" type="button" data-bs-toggle="collapse" data-bs-target="#faq4" aria-expanded="false" aria-controls="faq4">
+                                Do you offer warranties on your work?
+                                <i class="fas fa-chevron-down"></i>
+                            </button>
+                            <div id="faq4" class="collapse" data-bs-parent="#serviceFaqs">
+                                <div class="faq-content">
+                                    Absolutely! We stand behind our work with comprehensive warranties. Most services come with a 30-90 day warranty, and hardware installations include manufacturer warranties. We'll explain all warranty terms before beginning any work.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-lg-4">
+                <!-- Pricing Card -->
+                <div class="side-card fade-in">
+                    <h4 class="mb-2"><i class="fas fa-tag me-2 text-primary"></i>Service Price</h4>
+                    <div class="price mb-2">{{ service_info.price }}</div>
+                    <p class="text-muted mb-3">{{ service_info.description }}</p>
+                    <ul class="compact-list">
+                        <li><i class="fas fa-check text-success me-2"></i>Professional installation</li>
+                        <li><i class="fas fa-check text-success me-2"></i>Complete setup & configuration</li>
+                        <li><i class="fas fa-check text-success me-2"></i>User training & demonstration</li>
+                        <li><i class="fas fa-check text-success me-2"></i>Follow-up support included</li>
+                    </ul>
+                    <a href="{{ url_for('contact') }}?service={{ service_name }}" class="btn btn-primary w-100 mt-2">
+                        <i class="fas fa-calendar me-2"></i>Schedule This Service
+                    </a>
+                    <small class="text-muted">No obligation • Free estimates</small>
+                </div>
+                
+                <!-- Quick Contact -->
+                <div class="side-card fade-in">
+                    <h5 class="mb-2"><i class="fas fa-headset me-2 text-primary"></i>Need Immediate Help?</h5>
+                    <p class="text-muted mb-3">Speak with our technical support team</p>
+                    <a href="tel:+18003424999" class="btn btn-outline-primary w-100 mb-3">
+                        <i class="fas fa-phone me-2"></i>Call (800) 342-4999
+                    </a>
+                    <div class="d-flex align-items-center justify-content-center text-muted small">
+                        <i class="fas fa-clock me-2"></i>
+                        <div>
+                            <div><strong>Mon-Fri:</strong> 8AM - 8PM</div>
+                            <div><strong>Sat-Sun:</strong> 9AM - 6PM</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Service Guarantee -->
+                <div class="side-card fade-in">
+                    <h5 class="mb-2"><i class="fas fa-shield-alt me-2 text-success"></i>Our Promise</h5>
+                    <ul class="compact-list">
+                        <li><i class="fas fa-medal text-warning me-2"></i>100% Satisfaction</li>
+                        <li><i class="fas fa-clock text-primary me-2"></i>On-Time Service</li>
+                        <li><i class="fas fa-dollar-sign text-success me-2"></i>Fair Pricing</li>
+                        <li><i class="fas fa-tools text-info me-2"></i>Latest Tools</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Other Services in Category -->
+<section class="section-padding bg-light">
+    <div class="container">
+        <h3 class="text-center mb-5"><i class="fas fa-lightbulb me-2 text-primary"></i>Other {{ services_data[category].title }} Services</h3>
+        <div class="row g-4">
+            {% for service_key, service_item in services_data[category]['services'].items() %}
+                {% if service_key != service_name %}
+                <div class="col-lg-6">
+                    <div class="service-category-card fade-in">
+                        <div class="text-center">
+                            <div class="category-icon mx-auto" style="width: 60px; height: 60px; font-size: 1.5rem;">
+                                <i class="{{ services_data[category].icon }}"></i>
+                            </div>
+                            <h5 class="mt-3 mb-2">{{ service_key }}</h5>
+                            
+                            <p class="text-muted small mb-3">{{ service_item.description }}</p>
+                            <p class="price mb-3">{{ service_item.price }}</p>
+                            <a href="{{ url_for('service_detail', category=category, service_name=service_key) }}" class="btn btn-outline-primary">
+                                Learn More <i class="fas fa-arrow-right ms-1"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                {% endif %}
+            {% endfor %}
+        </div>
+        
+        <div class="text-center mt-5">
+            <a href="{{ url_for('service_category', category=category) }}" class="btn btn-primary">
+                <i class="fas fa-arrow-left me-2"></i>Back to {{ services_data[category].title }}
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- Bottom CTA -->
+<section class="section-padding bg-primary text-white">
+    <div class="container text-center">
+        <div class="row justify-content-center">
+            <div class="col-lg-8">
+                <h3 class="mb-4">Ready to Get Started with {{ service_name }}?</h3>
+                <p class="lead mb-4">Don't let technology problems slow you down. Our expert technicians are ready to help you get back up and running quickly.</p>
+                <div class="d-flex flex-column flex-sm-row gap-3 justify-content-center">
+                    <a href="{{ url_for('contact') }}?service={{ service_name }}" class="btn btn-light btn-lg">
+                        <i class="fas fa-calendar-check me-2"></i>Schedule Service
+                    </a>
+                    <a href="tel:+18003424999" class="btn btn-outline-light btn-lg">
+                        <i class="fas fa-phone me-2"></i>Call Now
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}
+
+{% block extra_js %}
+// Enhanced FAQ functionality
+document.addEventListener('DOMContentLoaded', function() {
+    // FAQ icon rotation
+    const faqButtons = document.querySelectorAll('.faq-button');
+    
+    faqButtons.forEach(button => {
+        button.addEventListener('click', function() {
+            const icon = this.querySelector('i');
+            const isExpanded = this.getAttribute('aria-expanded') === 'true';
+            
+            // Reset all icons first
+            document.querySelectorAll('.faq-button i').forEach(i => {
+                i.style.transform = 'rotate(0deg)';
+            });
+            
+            // Rotate icon for the clicked item if expanded
+            if (!isExpanded) {
+                icon.style.transform = 'rotate(180deg)';
+            }
+        });
+    });
+
+    // Smooth scroll to sections
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            const target = document.querySelector(this.getAttribute('href'));
+            if (target) {
+                target.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            }
+        });
+    });
+
+    // Add loading state to contact buttons
+    document.querySelectorAll('a[href*="contact"]').forEach(link => {
+        if (!link.getAttribute('href').startsWith('tel:')) {
+            link.addEventListener('click', function() {
+                if (this.textContent.includes('Schedule Service')) {
+                    const originalText = this.innerHTML;
+                    this.innerHTML = '<i class="fas fa-spinner fa-spin me-2"></i>Loading...';
+                    
+                    setTimeout(() => {
+                        this.innerHTML = originalText;
+                    }, 2000);
+                }
+            });
+        }
+    });
+
+    // Animation on scroll for elements with fade-in class
+    const fadeElements = document.querySelectorAll('.fade-in');
+    
+    const fadeObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.style.animationDelay = '0.1s';
+                entry.target.style.opacity = '1';
+            }
+        });
+    }, { threshold: 0.1 });
+
+    fadeElements.forEach(element => {
+        fadeObserver.observe(element);
+    });
+});
+{% endblock %}

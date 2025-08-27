@@ -289,13 +289,17 @@
                     {% for service_key, service_info in chunk %}
                     <div class="service-category mb-4">
                         <h6 class="fw-bold text-primary mb-2">
-                            <i class="{{ service_info.icon }} me-2"></i>{{ service_info.title }}
+                            <i class="{{ service_info.icon }} me-2"></i>
+                            <a href="{{ url_for('service_category', category=service_key) }}" class="text-decoration-none text-primary">
+                                {{ service_info.title }}
+                            </a>
                         </h6>
                         <ul class="list-unstyled">
-                            {% for service in service_info.services %}
+                            {% for service_name, service_details in service_info.services.items() %}
                             <li>
-                                <a class="dropdown-item py-1 px-0" href="{{ url_for('service_category', category=service_key) }}">
-                                    {{ service }}
+                                <a class="dropdown-item py-1 px-0" href="{{ url_for('service_detail', category=service_key, service_name=service_name) }}">
+                                    {{ service_name }}
+                                    <!-- <small class="text-muted d-block">{{ service_details.price }}</small> -->
                                 </a>
                             </li>
                             {% endfor %}
