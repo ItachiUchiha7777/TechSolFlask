@@ -251,6 +251,10 @@
             0% { transform: rotate(0deg); }
             100% { transform: rotate(360deg); }
         }
+        .navbar .nav-link {
+  white-space: nowrap;
+}
+
 
         {% block extra_css %}{% endblock %}
     </style>
@@ -326,16 +330,18 @@
                     <li class="nav-item">
                         <a class="nav-link" href="{{ url_for('faq') }}">FAQ</a>
                     </li>
+                   {# 
                     <li class="nav-item">
                         <a class="nav-link" href="{{ url_for('index') }}#testimonials">Reviews</a>
                     </li>
+                    #}
                     <!-- <li class="nav-item">
                         <span class="nav-link phone-number">
                             <i class="fas fa-phone me-1"></i>+1 (800) 342-4999
                         </span>
                     </li> -->
                     <li class="nav-item ms-2">
-                        <a class="btn btn-primary" href="{{ url_for('contact') }}">Get Started</a>
+                        <a class="btn btn-primary" style=" white-space: nowrap;height:45px;width:140px " href="{{ url_for('contact') }}">Get Started</a>
                     </li>
                 </ul>
             </div>

@@ -428,6 +428,8 @@
     position: fixed;
     bottom: 30px;
     right: 30px;
+    height:50px;
+    width:auto;
     z-index: 1000;
     background: linear-gradient(135deg, #ef4444, #dc2626);
     color: white;
@@ -620,6 +622,32 @@
   {% endfor %}
 </div>
 </section>
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  // Detect base URL (works on localhost and production)
+  const baseURL = `${window.location.protocol}//${window.location.host}`;
+
+  // Map card titles to specific URLs (paths only, no hardcoded domain)
+  const featuredLinks = new Map([
+    ['Computer', `${baseURL}/service/computers_printers/Computers`],
+    ['Printer & Scanner', `${baseURL}/service/computers_printers/Printers`],
+    ['WiFi & Network', `${baseURL}/service/wifi_network/Routers`],
+  ]);
+
+  // Loop through all service cards in this section and override links
+  document.querySelectorAll('#device-services .card').forEach(card => {
+    const titleEl = card.querySelector('.card-title');
+    const btnEl = card.querySelector('a.btn');
+
+    if (!titleEl || !btnEl) return;
+
+    const title = titleEl.textContent.trim();
+    if (featuredLinks.has(title)) {
+      btnEl.setAttribute('href', featuredLinks.get(title));
+    }
+  });
+});
+</script>
 
 <!-- Services Section -->
 <section class="section-padding bg-light">
@@ -953,11 +981,12 @@ document.addEventListener('DOMContentLoaded', () => {
 </section>
 #}
 <!-- Emergency Support Badge -->
-<div class="emergency-badge" onclick="window.location.href='tel:+18003424999'">
+<!-- <div class="emergency-badge" onclick="window.location.href='tel:+18003424999'">
     <i class="fas fa-exclamation-triangle me-2"></i>
-    <strong>Emergency?</strong>
+    <strong>call now</strong>
     <div style="font-size: 0.9rem;">Click to call now</div>
-</div>
+</div> -->
+
 {% endblock %}
 
 {% block extra_js %}
