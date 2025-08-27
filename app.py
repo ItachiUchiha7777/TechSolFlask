@@ -55,11 +55,11 @@ SERVICES_DATA = {
         'icon': 'fas fa-wifi',
         'services': ['Routers', 'In-Wall Cable Running'],
         'images': {
-            'main': 'https://images.unsplash.com/photo-1544717302-de2939b7ef71?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80',
+            'main': 'https://www.avg.com/hs-fs/hubfs/Blog_Content/Avg/Signal/AVG%20Signal%20Images/what_is_a_router_and_what_does_it_do_signal/Signal-What-is-a-Router-and-What-Does-it-Do-Hero.jpg?width=1200&name=Signal-What-is-a-Router-and-What-Does-it-Do-Hero.jpg',
             'thumbnails': [
                 'https://images.unsplash.com/photo-1544717302-de2939b7ef71?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80',
                 'https://images.unsplash.com/photo-1606904825846-647eb07f5be2?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80',
-                'https://images.unsplash.com/photo-1502920917128-1aa500764cbd?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80',
+                'https://5.imimg.com/data5/PS/AQ/MY-21257165/wifi-router-500x500.jpg',
                 'https://images.unsplash.com/photo-1558494949-ef010cbdcc31?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80'
             ]
         }
@@ -69,12 +69,12 @@ SERVICES_DATA = {
         'icon': 'fas fa-shield-alt',
         'services': ['Cameras', 'Locks', 'Alarm Systems'],
         'images': {
-            'main': 'https://images.unsplash.com/photo-1576013551627-0cc20b96c2a7?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80',
+            'main': 'https://hips.hearstapps.com/hmg-prod/images/indoor-security-cameras-023-preview-662bee34c6a12.jpg?crop=0.752xw:1.00xh;0.179xw,0&resize=1200:*',
             'thumbnails': [
-                'https://images.unsplash.com/photo-1576013551627-0cc20b96c2a7?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80',
+                'https://hips.hearstapps.com/hmg-prod/images/indoor-security-cameras-023-preview-662bee34c6a12.jpg?crop=0.752xw:1.00xh;0.179xw,0&resize=1200:*',
                 'https://images.unsplash.com/photo-1582139329536-e7284fece509?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80',
                 'https://images.unsplash.com/photo-1558036117-15d82a90b9b1?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80',
-                'https://images.unsplash.com/photo-1560472354-b33ff0c44a43?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80'
+                '   https://cdn11.bigcommerce.com/s-1pi0o9diyf/product_images/uploaded_images/surevision-smart-security-camera.jpg'
             ]
         }
     },
@@ -87,7 +87,7 @@ SERVICES_DATA = {
             'thumbnails': [
                 'https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80',
                 'https://images.unsplash.com/photo-1565849904461-04a58ad377e0?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80',
-                'https://images.unsplash.com/photo-1606144042614-b2417e99c4e3?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80',
+                'https://imagenes.elpais.com/resizer/v2/3XVOVO7OWJE3XADYWXIBWNCXW4.jpg?auth=c89ed0d5ee739f44789ab2380c13ffc964a6050272c800a6bcb93ba9496894a8&width=1960&height=1470&focal=1970%2C1154',
                 'https://images.unsplash.com/photo-1580910051074-3eb694886505?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80'
             ]
         }
@@ -97,12 +97,12 @@ SERVICES_DATA = {
         'icon': 'fas fa-shield-virus',
         'services': ['Virus Removal', 'Antivirus Installation', 'Malware Protection', 'Security Scanning'],
         'images': {
-            'main': 'https://images.unsplash.com/photo-1563013544-824ae1b704d3?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80',
+            'main': 'https://www.ncsc.gov.uk/images/library/Antivirus.png?mpwidth=545&mlwidth=737&twidth=961&dwidth=635&dpr=2.625&width=412',
             'thumbnails': [
                 'https://images.unsplash.com/photo-1563013544-824ae1b704d3?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80',
                 'https://images.unsplash.com/photo-1544197150-b99a580bb7a8?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80',
-                'https://images.unsplash.com/photo-1614064641938-3bbee52942c0?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80',
-                'https://images.unsplash.com/photo-1533750349088-cd871a92f312?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80'
+                'https://4.imimg.com/data4/FN/DH/MY-10387794/1.jpg',
+                'https://datascientest.com/en/files/2024/11/antivirus-datascientest-1024x512.webp'
             ]
         }
     },
@@ -111,10 +111,10 @@ SERVICES_DATA = {
         'icon': 'fas fa-desktop',
         'services': ['Computers', 'Printers'],
         'images': {
-            'main': 'https://images.unsplash.com/photo-1547394765-185e1e68f34e?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80',
+            'main': 'https://static.vecteezy.com/system/resources/previews/022/460/209/non_2x/a-computer-desktop-wallpaper-for-forex-trading-terminal-ai-generative-desktop-background-free-photo.jpg',
             'thumbnails': [
-                'https://images.unsplash.com/photo-1547394765-185e1e68f34e?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80',
-                'https://images.unsplash.com/photo-1580910051074-3eb694886505?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80',
+                'https://static.vecteezy.com/system/resources/previews/022/460/209/non_2x/a-computer-desktop-wallpaper-for-forex-trading-terminal-ai-generative-desktop-background-free-photo.jpg',
+                'https://c1.wallpaperflare.com/preview/529/735/633/printer-print-machine-scanner.jpg',
                 'https://images.unsplash.com/photo-1527864550417-7fd91fc51a46?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80',
                 'https://images.unsplash.com/photo-1612198188060-c7c2a3b66eae?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80'
             ]
