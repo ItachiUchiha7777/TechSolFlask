@@ -175,6 +175,15 @@ def service_category(category):
 def about():
     return render_template('about.html', services_data=SERVICES_DATA)
 
+@app.route('/faq')
+def faq():
+    return render_template('faq.html', services_data=SERVICES_DATA)
+
+@app.route('/terms')
+def terms():
+    return render_template('terms.html', services_data=SERVICES_DATA)
+
+
 @app.route('/contact', methods=['GET', 'POST'])
 def contact():
     if request.method == 'POST':

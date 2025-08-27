@@ -1,0 +1,663 @@
+{% extends "base.html" %}
+
+{% block title %}Frequently Asked Questions | I Tech Software Services{% endblock %}
+
+{% block extra_css %}
+<style>
+    /* FAQ Section Styling */
+    .faq-section {
+        padding-top: 120px;
+        padding-bottom: 80px;
+        background-color: #f8fafc;
+    }
+    
+    .faq-width {
+        max-width: 1000px;
+        margin: 0 auto;
+    }
+    
+    .heading-faq {
+        font-size: 1.8rem;
+        font-weight: 700;
+        color: var(--primary-color);
+        margin: 2.5rem 0 1.5rem;
+        padding-bottom: 0.5rem;
+        border-bottom: 2px solid var(--primary-color);
+    }
+    
+    .accordion-item {
+        border: none;
+        border-radius: 8px;
+        margin-bottom: 1rem;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+        overflow: hidden;
+    }
+    
+    .accordion-button {
+        background-color: white;
+        color: var(--text-dark);
+        font-weight: 600;
+        padding: 1.25rem;
+        border: none;
+        box-shadow: none;
+    }
+    
+    .accordion-button:not(.collapsed) {
+        background-color: var(--primary-color);
+        color: white;
+    }
+    
+    .accordion-button:focus {
+        box-shadow: none;
+        border: none;
+    }
+    
+    .accordion-button::after {
+        background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23212529'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e");
+    }
+    
+    .accordion-button:not(.collapsed)::after {
+        background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23fff'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e");
+    }
+    
+    .accordion-body {
+        padding: 1.25rem;
+        background-color: white;
+        color: var(--text-dark);
+        line-height: 1.7;
+    }
+    
+    .faq-intro {
+        text-align: center;
+        margin-bottom: 3rem;
+    }
+    
+    .faq-search {
+        max-width: 500px;
+        margin: 0 auto 2rem;
+        position: relative;
+    }
+    
+    .faq-search input {
+        padding: 12px 20px;
+        border-radius: 50px;
+        border: 1px solid #e2e8f0;
+        width: 100%;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    }
+    
+    .faq-search i {
+        position: absolute;
+        right: 20px;
+        top: 50%;
+        transform: translateY(-50%);
+        color: var(--text-light);
+    }
+</style>
+{% endblock %}
+
+{% block content %}
+<section class="faq-section section-padding">
+    <div class="container">
+        <div class="faq-intro fade-in">
+            <h1 class="section-title">Frequently Asked Questions</h1>
+            <p class="section-subtitle">Find answers to common questions about our services, memberships, and support.</p>
+            
+            <div class="faq-search">
+                <!-- <input type="text" placeholder="Search for questions..." id="faqSearch"> -->
+                <!-- <i class="fas fa-search"></i> -->
+            </div>
+        </div>
+        
+        <div class="row">
+            <div class="col-12">
+                <!-- General FAQs -->
+                <div class="accordion faq-width" id="generalFaqAccordion">
+                    <h2 class="heading-faq">General FAQs</h2>
+                    
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="generalHeadingOne">
+                            <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#generalCollapseOne" aria-expanded="false" aria-controls="generalCollapseOne">
+                                1. How long does a website redesign take?
+                            </button>
+                        </h2>
+                        <div id="generalCollapseOne" class="accordion-collapse collapse" aria-labelledby="generalHeadingOne"
+                            data-bs-parent="#generalFaqAccordion">
+                            <div class="accordion-body">
+                                <p>The duration depends on project scope but typically takes 2-4 weeks.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="generalHeadingTwo">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#generalCollapseTwo" aria-expanded="false" aria-controls="generalCollapseTwo">
+                                2. What is I Tech Software Services' Cancellation Policy?
+                            </button>
+                        </h2>
+                        <div id="generalCollapseTwo" class="accordion-collapse collapse" aria-labelledby="generalHeadingTwo"
+                            data-bs-parent="#generalFaqAccordion">
+                            <div class="accordion-body">
+                                <p>We recognize that plans can change quickly and our customers' needs may shift. While we strive to be accommodating, short-notice cancellations can result in our technicians losing valuable work. Short-notice cancellations may result in fees. Please note that fees apply only to in-home services.</p>
+                                <br>
+                                <p>
+                                    <!-- For more details on our cancellation policy, click here: <a href="" style="color:var(--primary-color);">I Tech Software Services Cancellation Policy</a> -->
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="generalHeadingThree">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#generalCollapseThree" aria-expanded="false" aria-controls="generalCollapseThree">
+                                3. What are your hours of operation?
+                            </button>
+                        </h2>
+                        <div id="generalCollapseThree" class="accordion-collapse collapse" aria-labelledby="generalHeadingThree"
+                            data-bs-parent="#generalFaqAccordion">
+                            <div class="accordion-body">
+                                <p>Our support is available 24/7, with live agents from 8 AM to 8 PM.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="generalHeadingFour">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#generalCollapseFour" aria-expanded="false" aria-controls="generalCollapseFour">
+                                4. Do you offer support for both Mac and Windows systems?
+                            </button>
+                        </h2>
+                        <div id="generalCollapseFour" class="accordion-collapse collapse" aria-labelledby="generalHeadingFour"
+                            data-bs-parent="#generalFaqAccordion">
+                            <div class="accordion-body">
+                                <p>Yes, we offer support for both Mac and Windows platforms.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Account FAQs -->
+                <div class="accordion faq-width" id="accountFAQAccordion">
+                    <h2 class="heading-faq">Account FAQs</h2>
+                    
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="accountHeaderOne">
+                            <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#accountCollapseOne" aria-expanded="true" aria-controls="accountCollapseOne">
+                                1. How can I change my email, phone, or address?
+                            </button>
+                        </h2>
+                        <div id="accountCollapseOne" class="accordion-collapse collapse" aria-labelledby="accountHeaderOne"
+                            data-bs-parent="#accountFAQAccordion">
+                            <div class="accordion-body">
+                                <p>You can update your personal information in the account settings section. Or you can simply email us with any concern and we will change your email, phone and address.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="accountHeaderTwo">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#accountCollapseTwo" aria-expanded="false" aria-controls="accountCollapseTwo">
+                                2. How can I reset or change my password?
+                            </button>
+                        </h2>
+                        <div id="accountCollapseTwo" class="accordion-collapse collapse" aria-labelledby="accountHeaderTwo"
+                            data-bs-parent="#accountFAQAccordion">
+                            <div class="accordion-body">
+                                <p>Go to the password reset page and follow the steps to reset your password. Or you can email us and our support team will guide you throughout the process.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="accountHeaderThree">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#accountCollapseThree" aria-expanded="false" aria-controls="accountCollapseThree">
+                                3. What should I do if I forget my username?
+                            </button>
+                        </h2>
+                        <div id="accountCollapseThree" class="accordion-collapse collapse" aria-labelledby="accountHeaderThree"
+                            data-bs-parent="#accountFAQAccordion">
+                            <div class="accordion-body">
+                                <p>Use the "Forgot Username" feature on the login page to retrieve it.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="accountHeaderFour">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#accountCollapseFour" aria-expanded="false" aria-controls="accountCollapseFour">
+                                4. How can I delete my account?
+                            </button>
+                        </h2>
+                        <div id="accountCollapseFour" class="accordion-collapse collapse" aria-labelledby="accountHeaderFour"
+                            data-bs-parent="#accountFAQAccordion">
+                            <div class="accordion-body">
+                                <p>To delete your account, contact our support team through email or live chat.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="accountHeaderFive">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#accountCollapseFive" aria-expanded="false" aria-controls="accountCollapseFive">
+                                5. Can I merge multiple accounts into one?
+                            </button>
+                        </h2>
+                        <div id="accountCollapseFive" class="accordion-collapse collapse" aria-labelledby="accountHeaderFive"
+                            data-bs-parent="#accountFAQAccordion">
+                            <div class="accordion-body">
+                                <p>Yes, contact support, and they will assist you in merging accounts.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Membership FAQs -->
+                <div class="accordion faq-width" id="membershipFaqAccordion">
+                    <h2 class="heading-faq">Membership FAQs</h2>
+                    
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="membershipHeadingOne">
+                            <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#membershipCollapseOne" aria-expanded="true" aria-controls="membershipCollapseOne">
+                                1. Is it necessary to use all of the services included in membership?
+                            </button>
+                        </h2>
+                        <div id="membershipCollapseOne" class="accordion-collapse collapse" aria-labelledby="membershipHeadingOne"
+                            data-bs-parent="#membershipFaqAccordion">
+                            <div class="accordion-body">
+                                <p>No, you can use only the services you need.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="membershipHeadingTwo">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#membershipCollapseTwo" aria-expanded="false" aria-controls="membershipCollapseTwo">
+                                2. Is this complete process free from risks?
+                            </button>
+                        </h2>
+                        <div id="membershipCollapseTwo" class="accordion-collapse collapse" aria-labelledby="membershipHeadingTwo"
+                            data-bs-parent="#membershipFaqAccordion">
+                            <div class="accordion-body">
+                                <p>We ensure a secure and seamless experience with minimal risk. Fees for premium/standard Membership are billed upfront, including any additional services purchased. If you're not satisfied with the plan within the first 30 days, we will refund your membership cost, minus any discounts applied to services.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="membershipHeadingThree">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#membershipCollapseThree" aria-expanded="false" aria-controls="membershipCollapseThree">
+                                3. What is the duration of this plan? Is it auto-renewable?
+                            </button>
+                        </h2>
+                        <div id="membershipCollapseThree" class="accordion-collapse collapse" aria-labelledby="membershipHeadingThree"
+                            data-bs-parent="#membershipFaqAccordion">
+                            <div class="accordion-body">
+                                <p>Your Membership is valid for one full year and will automatically renew for your convenience. If you prefer to turn off auto-renewal, simply log in to your secure member portal and adjust your settings.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="membershipHeadingFour">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#membershipCollapseFour" aria-expanded="false" aria-controls="membershipCollapseFour">
+                                4. What is In-House testing?
+                            </button>
+                        </h2>
+                        <div id="membershipCollapseFour" class="accordion-collapse collapse" aria-labelledby="membershipHeadingFour"
+                            data-bs-parent="#membershipFaqAccordion">
+                            <div class="accordion-body">
+                                <p>The In-House testing is an annual in-home visit where a certified technician evaluates your home's technology systems. This thorough assessment covers your main computer, internet connection, router, and WiFi. You'll receive a detailed report with actionable insights to help you understand and optimize your tech systems for better performance.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="membershipHeadingFive">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#membershipCollapseFive" aria-expanded="false" aria-controls="membershipCollapseFive">
+                                5. Can I upgrade or downgrade my membership plan?
+                            </button>
+                        </h2>
+                        <div id="membershipCollapseFive" class="accordion-collapse collapse" aria-labelledby="membershipHeadingFive"
+                            data-bs-parent="#membershipFaqAccordion">
+                            <div class="accordion-body">
+                                <p>Yes, you can change your plan by contacting customer support.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Contact Us -->
+                <div class="accordion faq-width" id="contactManagementAccordion">
+                    <h2 class="heading-faq">Contact Us</h2>
+                    
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingContactOne">
+                            <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#collapseContactOne" aria-expanded="true" aria-controls="collapseContactOne">
+                                1. How can I return a product?
+                            </button>
+                        </h2>
+                        <div id="collapseContactOne" class="accordion-collapse collapse" aria-labelledby="headingContactOne"
+                            data-bs-parent="#contactManagementAccordion">
+                            <div class="accordion-body">
+                                <p>You can fill out the form to return the product.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingContactTwo">
+                            <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#collapseContactTwo" aria-expanded="true" aria-controls="collapseContactTwo">
+                                2. What is the return period for a product?
+                            </button>
+                        </h2>
+                        <div id="collapseContactTwo" class="accordion-collapse collapse" aria-labelledby="headingContactTwo"
+                            data-bs-parent="#contactManagementAccordion">
+                            <div class="accordion-body">
+                                <p>Most products can be returned within 30 days of purchase</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingContactThree">
+                            <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#collapseContactThree" aria-expanded="true" aria-controls="collapseContactThree">
+                                3. When will my refund be processed?
+                            </button>
+                        </h2>
+                        <div id="collapseContactThree" class="accordion-collapse collapse" aria-labelledby="headingContactThree"
+                            data-bs-parent="#contactManagementAccordion">
+                            <div class="accordion-body">
+                                <p>Refunds for product returns are processed once the item has been received at our center.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingContactFour">
+                            <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#collapseContactFour" aria-expanded="true" aria-controls="collapseContactFour">
+                                4. The item I ordered has been shipped, but I no longer need it. Can I cancel my order?
+                            </button>
+                        </h2>
+                        <div id="collapseContactFour" class="accordion-collapse collapse" aria-labelledby="headingContactFour"
+                            data-bs-parent="#contactManagementAccordion">
+                            <div class="accordion-body">
+                                <p>We cannot cancel the order or shipment once the item is in route. To cancel or return the order, you can either refuse the delivery so the package gets sent back, or contact us after you receive the item. Once the item is returned to us, a full refund will be processed.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingContactFive">
+                            <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#collapseContactFive" aria-expanded="true" aria-controls="collapseContactFive">
+                                5. When can I get in touch with the support team?
+                            </button>
+                        </h2>
+                        <div id="collapseContactFive" class="accordion-collapse collapse" aria-labelledby="headingContactFive"
+                            data-bs-parent="#contactManagementAccordion">
+                            <div class="accordion-body">
+                                <p>We offer 24/7 support through email and live chat</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingContactSix">
+                            <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#collapseContactSix" aria-expanded="true" aria-controls="collapseContactSix">
+                                6. What is your customer support contact number?
+                            </button>
+                        </h2>
+                        <div id="collapseContactSix" class="accordion-collapse collapse" aria-labelledby="headingContactSix"
+                            data-bs-parent="#contactManagementAccordion">
+                            <div class="accordion-body">
+                                <p>You can contact customer support at 080 707 555-321</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingContactSeven">
+                            <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#collapseContactSeven" aria-expanded="true" aria-controls="collapseContactSeven">
+                                7. Do you offer international customer support?
+                            </button>
+                        </h2>
+                        <div id="collapseContactSeven" class="accordion-collapse collapse" aria-labelledby="headingContactSeven"
+                            data-bs-parent="#contactManagementAccordion">
+                            <div class="accordion-body">
+                                <p>Yes, we provide global support through phone, email, and live chat.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Booking Management -->
+                <div class="accordion faq-width" id="bookingManagementAccordion">
+                    <h2 class="heading-faq">Booking Management</h2>
+                    
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="bookingHeadingOne">
+                            <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#bookingCollapseOne" aria-expanded="true" aria-controls="bookingCollapseOne">
+                                1. Can I choose the same technician for future visits?
+                            </button>
+                        </h2>
+                        <div id="bookingCollapseOne" class="accordion-collapse collapse" aria-labelledby="bookingHeadingOne"
+                            data-bs-parent="#bookingManagementAccordion">
+                            <div class="accordion-body">
+                                <p>Yes, you can request the same technician for consistency.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="bookingHeadingTwo">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#bookingCollapseTwo" aria-expanded="false" aria-controls="bookingCollapseTwo">
+                                2. How can I book an appointment?
+                            </button>
+                        </h2>
+                        <div id="bookingCollapseTwo" class="accordion-collapse collapse" aria-labelledby="bookingHeadingTwo"
+                            data-bs-parent="#bookingManagementAccordion">
+                            <div class="accordion-body">
+                                <p>You can fill out the booking form or contact us via email.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="bookingHeadingThree">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#bookingCollapseThree" aria-expanded="false" aria-controls="bookingCollapseThree">
+                                3. Why am I being asked to provide additional availability?
+                            </button>
+                        </h2>
+                        <div id="bookingCollapseThree" class="accordion-collapse collapse" aria-labelledby="bookingHeadingThree"
+                            data-bs-parent="#bookingManagementAccordion">
+                            <div class="accordion-body">
+                                <p>Additional availability ensures flexibility in scheduling and faster service.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="bookingHeadingFour">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#bookingCollapseFour" aria-expanded="false" aria-controls="bookingCollapseFour">
+                                4. Can I reschedule my appointment?
+                            </button>
+                        </h2>
+                        <div id="bookingCollapseFour" class="accordion-collapse collapse" aria-labelledby="bookingHeadingFour"
+                            data-bs-parent="#bookingManagementAccordion">
+                            <div class="accordion-body">
+                                <p>Yes, appointments can be rescheduled through your account or by contacting support.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="bookingHeadingFive">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#bookingCollapseFive" aria-expanded="false" aria-controls="bookingCollapseFive">
+                                5. What happens if a technician is late?
+                            </button>
+                        </h2>
+                        <div id="bookingCollapseFive" class="accordion-collapse collapse" aria-labelledby="bookingHeadingFive"
+                            data-bs-parent="#bookingManagementAccordion">
+                            <div class="accordion-body">
+                                <p>We will notify you of any delays and reschedule if necessary.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Payment Charges and Fee FAQs -->
+                <div class="accordion faq-width" id="PaymentManagment">
+                    <h2 class="heading-faq">Payment Charges and Fee FAQs</h2>
+                    
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingFortheen">
+                            <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#collapseFortheen1" aria-expanded="true" aria-controls="collapseFortheen1">
+                                Should I tip my assigned technician? 
+                            </button>
+                        </h2>
+                        <div id="collapseFortheen1" class="accordion-collapse collapse" aria-labelledby="headingFortheen"
+                            data-bs-parent="#PaymentManagment">
+                            <div class="accordion-body">
+                                <p>Tipping is optional but appreciated if you're satisfied with the service.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingSixteen">
+                            <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#collapseSaventeen" aria-expanded="true" aria-controls="collapseSaventeen">
+                                Are there any hidden fees in your service plans? 
+                            </button>
+                        </h2>
+                        <div id="collapseSaventeen" class="accordion-collapse collapse" aria-labelledby="headingSixteen"
+                            data-bs-parent="#PaymentManagment">
+                            <div class="accordion-body">
+                                <p>No, all fees are transparent and disclosed upfront in your plan details.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingErtheen">
+                            <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#collapseErtheen" aria-expanded="true" aria-controls="collapseErtheen">
+                                What payment methods do you accept? 
+                            </button>
+                        </h2>
+                        <div id="collapseErtheen" class="accordion-collapse collapse" aria-labelledby="headingErtheen"
+                            data-bs-parent="#PaymentManagment">
+                            <div class="accordion-body">
+                                <p>We accept credit cards, PayPal, and online bank transfers.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingNintheen">
+                            <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#collapseNinteen" aria-expanded="true" aria-controls="collapseNinteen">
+                                Is there a late fee for overdue payments? 
+                            </button>
+                        </h2>
+                        <div id="collapseNinteen" class="accordion-collapse collapse" aria-labelledby="headingNintheen"
+                            data-bs-parent="#PaymentManagment">
+                            <div class="accordion-body">
+                                <p>Yes, a late fee may apply if the payment is not made on time.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}
+
+{% block extra_js %}
+<script>
+    // FAQ search functionality
+    document.addEventListener('DOMContentLoaded', function() {
+        const faqSearch = document.getElementById('faqSearch');
+        
+        if (faqSearch) {
+            faqSearch.addEventListener('input', function() {
+                const searchTerm = this.value.toLowerCase();
+                const accordionItems = document.querySelectorAll('.accordion-item');
+                
+                accordionItems.forEach(item => {
+                    const question = item.querySelector('.accordion-button').textContent.toLowerCase();
+                    const answer = item.querySelector('.accordion-body').textContent.toLowerCase();
+                    
+                    if (question.includes(searchTerm) || answer.includes(searchTerm)) {
+                        item.style.display = 'block';
+                        
+                        // If it's in a collapsed section, open it
+                        const collapseElement = item.querySelector('.accordion-collapse');
+                        if (collapseElement && !collapseElement.classList.contains('show')) {
+                            const bsCollapse = new bootstrap.Collapse(collapseElement);
+                            bsCollapse.show();
+                        }
+                    } else {
+                        item.style.display = 'none';
+                    }
+                });
+                
+                // Also search section headers
+                const sectionHeaders = document.querySelectorAll('.heading-faq');
+                sectionHeaders.forEach(header => {
+                    if (header.textContent.toLowerCase().includes(searchTerm)) {
+                        header.closest('.accordion').style.display = 'block';
+                    } else {
+                        // Check if any items in this section are visible
+                        const hasVisibleItems = Array.from(header.closest('.accordion').querySelectorAll('.accordion-item'))
+                            .some(item => item.style.display !== 'none');
+                        
+                        header.closest('.accordion').style.display = hasVisibleItems ? 'block' : 'none';
+                    }
+                });
+            });
+        }
+        
+        // Open specific FAQ if URL has hash
+        if (window.location.hash) {
+            const targetElement = document.querySelector(window.location.hash);
+            if (targetElement && targetElement.classList.contains('accordion-collapse')) {
+                const bsCollapse = new bootstrap.Collapse(targetElement);
+                bsCollapse.show();
+                
+                // Scroll to the element
+                setTimeout(() => {
+                    targetElement.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                }, 300);
+            }
+        }
+    });
+</script>
+{% endblock %}

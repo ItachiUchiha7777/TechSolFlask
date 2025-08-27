@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{% block title %}TechAssist - Complete Device Assistance{% endblock %}</title>
+    <title>{% block title %} I Tech Software Services - Complete Device Assistance{% endblock %}</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -260,7 +260,7 @@
     <nav class="navbar navbar-expand-lg fixed-top">
         <div class="container">
            <a style="color:rgb(76, 162, 193) !important;" class="navbar-brand" href="{{ url_for('index') }}">
-    <img src="{{ url_for('static', filename='logo.png') }}" alt="TechAssist Logo" style="height: 56px; vertical-align: middle; margin-right: 10px;">
+    <img src="{{ url_for('static', filename='logo.png') }}" alt=" I Tech Software Services Logo" style="height: 56px; vertical-align: middle; margin-right: 10px;">
     I Tech Software Services
 </a>
             
@@ -313,13 +313,16 @@
                         <a class="nav-link" href="#process">How It Works</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#testimonials">Reviews</a>
+                        <a class="nav-link" href="{{ url_for('faq') }}">FAQ</a>
                     </li>
                     <li class="nav-item">
+                        <a class="nav-link" href="#testimonials">Reviews</a>
+                    </li>
+                    <!-- <li class="nav-item">
                         <span class="nav-link phone-number">
                             <i class="fas fa-phone me-1"></i>+1 (800) 342-4999
                         </span>
-                    </li>
+                    </li> -->
                     <li class="nav-item ms-2">
                         <a class="btn btn-primary" href="{{ url_for('contact') }}">Get Started</a>
                     </li>
@@ -375,7 +378,7 @@
                     </div>
                     <div class="d-flex align-items-center mb-2">
                         <i class="fas fa-envelope me-3 text-primary"></i>
-                        <span>support@techassist.com</span>
+                        <span>support@ I Tech Software Services.com</span>
                     </div>
                     <div class="d-flex align-items-start mb-2">
                         <i class="fas fa-clock me-3 text-primary mt-1"></i>
@@ -391,11 +394,11 @@
             
             <div class="row align-items-center">
                 <div class="col-md-6">
-                    <p class="mb-0">&copy; 2025 TechAssist. All rights reserved.</p>
+                    <p class="mb-0">&copy; 2025  I Tech Software Services. All rights reserved.</p>
                 </div>
                 <div class="col-md-6 text-md-end">
                     <a href="#" class="footer-link me-4">Privacy Policy</a>
-                    <a href="#" class="footer-link">Terms of Service</a>
+                    <a href="{{url_for('terms')}}" class="footer-link">Terms of Service</a>
                 </div>
             </div>
         </div>
