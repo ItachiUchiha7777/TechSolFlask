@@ -4,8 +4,8 @@
 /* Hero Section */
 .hero-section {
     padding-top: 8rem ;
-    background: linear-gradient(135deg, rgba(37, 99, 235, 0.9), rgba(14, 165, 233, 0.9)),
-                url('https://images.unsplash.com/photo-1581092580497-e0d23cbdf1dc?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80');
+
+     background: url("https://img.freepik.com/free-vector/realistic-technology-background_52683-73672.jpg") no-repeat center center fixed;
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
@@ -15,6 +15,8 @@
     position: relative;
     overflow: hidden;
     padding-bottom: 3rem;
+        <!-- background: linear-gradient(135deg, rgba(37, 99, 235, 0.9), rgba(14, 165, 233, 0.9)),
+                url('https://img.freepik.com/free-vector/realistic-technology-background_52683-73672.jpg'); -->
 }
 
 .hero-section::before {
@@ -597,10 +599,10 @@
 
     <div class="row g-4">
   {% set featured_services = [
-    ('computers_printers', 'Computer', 'Receive expert assistance for computers and printers from anywhere. Our technicians ensure optimal performance through troubleshooting, configuration, and maintenance services.', 'https://pcpackard.com/images/tech-support/desk-top-1.jpg'),
+    ('computers_printers', 'Computer', 'Receive expert assistance for computers and printers from anywhere. Our technicians ensure optimal performance through troubleshooting, configuration, and maintenance services.', 'https://i.ibb.co/RpbfJFtZ/comp-removebg-preview.png'),
     ('computers_printers', 'Printer & Scanner', 'We resolve printer and scanner-related issues, ensuring your devices run smoothly and efficiently, keeping you connected and productive at all times.', 'https://pcpackard.com/images/tech-support/printer-top.png'),
-    ('wifi_network', 'WiFi & Network', 'Ensure fast and secure WiFi connections at home or work. Our specialists optimize your network for peak performance and reliability.', 'https://pcpackard.com/images/tech-support/wifi-top-1.jpg'),
-    ('smart_home', 'Smart Home', 'Enhance your smart home with our configuration and management services. We ensure your devices function seamlessly for convenience and efficiency.', 'https://pcpackard.com/images/tech-support/speker-top-1.jpg')
+    ('wifi_network', 'WiFi & Network', 'Ensure fast and secure WiFi connections at home or work. Our specialists optimize your network for peak performance and reliability.', 'https://i.ibb.co/MDv4pxyr/images-removebg-preview.png'),
+    ('smart_home', 'Smart Home', 'Enhance your smart home with our configuration and management services. We ensure your devices function seamlessly for convenience and efficiency.', 'https://i.ibb.co/7JxZBt6F/112e23-removebg-preview.png')
   ] %}
   
   {% for service_key, title, description, image in featured_services %}
@@ -659,7 +661,7 @@ document.addEventListener('DOMContentLoaded', () => {
         
         {% set service_items = [
     {
-        'image': 'https://pcpackard.com/images/assist-you/1.png',
+        'image': 'https://img.freepik.com/free-photo/view-retro-computer-technology_23-2149506828.jpg?semt=ais_hybrid&w=740&q=80',
         'title': 'Computer',
         'link': 'computers_printers'
     },
@@ -669,7 +671,7 @@ document.addEventListener('DOMContentLoaded', () => {
         'link': 'computers_printers'
     },
     {
-        'image': 'https://pcpackard.com/images/assist-you/3.png',
+        'image': 'https://i.ibb.co/MDv4pxyr/images-removebg-preview.png',
         'title': 'Wifi Network',
         'link': 'wifi_network'
     },
@@ -679,7 +681,7 @@ document.addEventListener('DOMContentLoaded', () => {
         'link': 'email'
     },
     {
-        'image': 'https://pcpackard.com/images/assist-you/5.png',
+        'image': 'https://www.ncsc.gov.uk/images/library/Antivirus.png?mpwidth=545&mlwidth=737&twidth=961&dwidth=635&dpr=2.625&width=412',
         'title': 'Antivirus',
         'link': 'antivirus' 
     },
@@ -699,7 +701,7 @@ document.addEventListener('DOMContentLoaded', () => {
         'link': 'tv_mounting' 
     },
     {
-        'image': 'https://pcpackard.com/images/assist-you/9.png',
+        'image': 'https://security1.com.au/wp-content/uploads/2024/11/Smart-Home-Security-Security-1-1170x658.jpg',
         'title': 'Home Security',
         'link': 'home_security'  
     }
