@@ -2,6 +2,7 @@
 
 {% block extra_css %}
 /* Hero Section */
+/* Hero Section */
 .hero-section {
     padding-top: 8rem;
     background: url("https://i.ibb.co/C3GTsqn9/Chat-GPT-Image-Aug-28-2025-12-22-26-AM.png") no-repeat center center fixed;
@@ -17,11 +18,60 @@
     margin-top: 80px;
 }
 
+/* For tablets */
+@media (max-width: 1024px) {
+    .hero-section {
+        min-height: 80vh;
+        background-attachment: scroll;
+    }
+}
+
 /* For phones */
 @media (max-width: 768px) {
     .hero-section {
-        min-height: 50vh;
+        min-height: 60vh; /* Reduced from 20% to a more reasonable 60vh */
+        padding-top: 4rem;
+        padding-bottom: 2rem;
         background-attachment: scroll; /* improves performance on mobile */
+        background-position: center center;
+    }
+    
+    .hero-content {
+        padding: 1rem 0;
+    }
+    
+    .hero-buttons {
+        padding-top: 2rem !important; /* Reduced from 100px */
+    }
+}
+
+/* For very small phones */
+@media (max-width: 480px) {
+    .hero-section {
+        min-height: 50vh; /* Even smaller for very small screens */
+        padding-top: 3rem;
+        padding-bottom: 1.5rem;
+    }
+    
+    .hero-buttons {
+        padding-top: 1.5rem !important;
+    }
+    
+    .hero-title {
+        font-size: 2rem; /* Smaller title on very small screens */
+    }
+    
+    .hero-subtitle {
+        font-size: 1rem;
+        margin-bottom: 1.5rem;
+    }
+}
+
+/* For landscape orientation on phones */
+@media (max-width: 768px) and (orientation: landscape) {
+    .hero-section {
+        min-height: 70vh; /* Slightly taller for landscape */
+        padding-top: 2rem;
     }
 }
 
@@ -772,7 +822,7 @@ document.addEventListener('DOMContentLoaded', () => {
     ['Audio and Video (Alexa)', `${baseURL}/service/audio_video/Advanced%20Audio%20Systems`],
     ['Mobile and Tablet', `${baseURL}/service/mobile_devices/Phone%20%26%20Tablet`],
     ['Wifi Network', `${baseURL}/service/wifi_network/Routers`],
-    ['Printer And Scanner', `${baseURL}/service/computers_printers/Printers`],
+    ['Printer And Scanner', `${baseURL}/service/computers_printers/ Printers%20and%20Scanner`],
     ['Computer', `${baseURL}/service/computers_printers/Computers`],
     ['Antivirus', `${baseURL}/service/computers_printers/Firewall%20%26%20Security`],
     ['Email', `${baseURL}/service/computers_printers/Email%20Troubleshooting`],
