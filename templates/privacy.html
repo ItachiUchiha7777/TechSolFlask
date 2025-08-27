@@ -1,0 +1,307 @@
+{% extends 'base.html' %}
+
+{% block title %}Privacy Policy - I Tech Software Services{% endblock %}
+
+{% block extra_css %}
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+
+<style>
+  body {
+    font-family: 'Inter', sans-serif;
+    background-color: #f8f9fb;
+    margin: 0;
+    padding: 0;
+  }
+
+  /* Hero Section */
+  .hero {
+    position: relative;
+    background: url('https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?ixlib=rb-4.0.3&auto=format&fit=crop&w=1500&q=80') center center/cover no-repeat;
+    height: 280px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    overflow: hidden;
+  }
+
+  .hero-overlay {
+    position: absolute;
+    top: 0; right: 0; bottom: 0; left: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 0;
+  }
+
+  .hero-title {
+    position: relative;
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+    font-size: 3rem;
+    z-index: 1;
+    text-align: center;
+    letter-spacing: 1px;
+  }
+
+  /* Language Selector */
+  .language-selector {
+    text-align: center;
+    margin: 1.5rem auto;
+    max-width: 950px;
+    padding: 0 1rem;
+  }
+
+  .language-selector select {
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    font-family: 'Inter', sans-serif;
+    font-size: 1rem;
+  }
+
+  .language-note {
+    font-size: 0.9rem;
+    color: #666;
+    margin-top: 0.5rem;
+  }
+
+  /* Policy Container */
+  .policy-container {
+    max-width: 950px;
+    margin: 2rem auto 5rem;
+    padding: 2.5rem 3rem;
+    background: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+  }
+
+  .policy-container h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #222;
+    margin-top: 2.5rem;
+    margin-bottom: 1rem;
+    padding-bottom: 0.4rem;
+    border-bottom: 1px solid #eee;
+  }
+
+  .policy-container h3 {
+    font-family: 'Inter', sans-serif;
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: #333;
+    margin-top: 2rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .policy-container p {
+    color: #444;
+    font-size: 1.05rem;
+    line-height: 1.7;
+    margin-bottom: 1rem;
+  }
+
+  .policy-container ul, .policy-container ol {
+    color: #444;
+    font-size: 1.05rem;
+    line-height: 1.7;
+    margin-bottom: 1rem;
+    padding-left: 1.5rem;
+  }
+
+  .policy-container li {
+    margin-bottom: 0.5rem;
+  }
+
+  .policy-container strong {
+    font-weight: 600;
+    color: #000;
+  }
+
+  .info-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1.5rem 0;
+  }
+
+  .info-table th, .info-table td {
+    padding: 0.75rem;
+    text-align: left;
+    border: 1px solid #ddd;
+  }
+
+  .info-table th {
+    background-color: #f5f5f5;
+    font-weight: 600;
+  }
+
+  /* Contact Info */
+  .contact-info p {
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+  }
+
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .hero-title {
+      font-size: 2.2rem;
+    }
+    
+    .policy-container {
+      padding: 1.5rem;
+      margin: 1.5rem;
+    }
+    
+    .policy-container h2 {
+      font-size: 1.5rem;
+    }
+  }
+</style>
+{% endblock %}
+
+{% block content %}
+<div class="hero">
+  <div class="hero-overlay"></div>
+  <h1 class="hero-title">Privacy Policy</h1>
+</div>
+
+
+
+<div class="policy-container">
+  <p><strong>Last Updated:</strong> August 27, 2025</p>
+  
+  <p>This Privacy Policy (the "Policy") describes the data collection and processing practices of  I Tech Software Services and its subsidiaries and Affiliated Companies (" I Tech Software Services," "we," "us," or "our"). The Policy explains what data we collect, why we collect it, and how we use it when you access our websites that link to this Policy, download or use one or more of our software products ("Product(s)") and use or access any related services (together with the Websites and Products, the "Services").</p>
+
+  <h2>Introduction</h2>
+  <p>We recognize the importance of delivering safe products and protecting the privacy rights of our customers. Therefore, we designed this Policy in clear language and modular structure.</p>
+  <p>This Policy forms part of your agreement with us and shall be read and consented to together with the terms of service and/or license agreement of the relevant Service.</p>
+  <p>Please read the Policy carefully to be sure you understand it and agree with its terms before you use any of the Services. If you do not agree with the terms in this Policy and the choices we provide do not mitigate your concerns, please do not access or use the Services. For any questions or matter related to this Policy, or your privacy rights, please contact our data protection officer at: info@ITechSoftware.com.</p>
+
+  <h2>General Provisions</h2>
+  <h3>1. Jurisdiction and Language</h3>
+  <p>This Policy is designed with the EU General Data Protection Regulation (GDPR) and the ePrivacy directive in mind (jointly, the "Applicable Laws"). If you reside in any jurisdiction other than the EU, the EEA or the UK, and if you would like to learn more about our region-specific processing of Personal Information, you can directly navigate to the supplemental applicable jurisdiction notices below.</p>
+
+  <h3>2. Scope and Applicability</h3>
+  <p><strong>2.1 Controller Information</strong><br>
+   I Tech Software Services is the data controller of the Personal Information processed in connection with the Services. Postal address: 201 CENTURY VILLAGE BLVD STE 200 MONROE, LA 71203. We can be contacted at: info@ITechSoftware.com.</p>
+  
+  <p><strong>2.2 Data Protection Officer (DPO)</strong><br>
+  To contact our Data Protection Officer, email: info@ITechSoftware.com.</p>
+  
+  <p><strong>2.3 Categories of Data Subjects</strong><br>
+  This Policy applies to the following types of Data Subjects:</p>
+  <ul>
+    <li>Website Visitors</li>
+    <li>Business Customers and Partners</li>
+    <li>Vendors, Suppliers, or Processors</li>
+  </ul>
+  <p>Unless otherwise mentioned in this Policy, we refer to any type of Data Subject as "you".</p>
+
+  <h2>Changes to This Policy</h2>
+  <p>We may amend, add, or delete provisions of this Policy to accommodate changes in our Services, Products, and data processing policies and to conform to new legislation. Updates will be posted here and indicated by the updated date.</p>
+  <p>In case of a substantial change, we will provide a more prominent notice, such as a website banner or email (if available). Continued use of our Services constitutes your acceptance of the updated Policy.</p>
+
+  <h2>Personal Information We May Process and How</h2>
+  <p>We process two types of information:</p>
+  <ol>
+    <li><strong>Personal Information (PI):</strong> Identifies you as a person (e.g., name, email, phone, address, IP address, device ID).</li>
+    <li><strong>Non-Personal Information (non-PI):</strong> Aggregated or anonymized data that cannot identify an individual.</li>
+  </ol>
+  
+  <p>We collect this data through:</p>
+  
+  <h3>Information You Submit to Us</h3>
+  <p>Example: forms, account creation, or when contacting us.</p>
+  
+  <p><strong>01. Contact Details</strong><br>
+  Includes name, email, and phone number submitted through forms or when reaching support.</p>
+  
+  <p><strong>02. Subscription to Our Mailing List</strong><br>
+  If you subscribe, we collect your email. You can unsubscribe anytime using the link in our emails or contacting our DPO.</p>
+  <p><strong>Purpose:</strong> Send updates, tips, and promotional content (with consent).</p>
+  <p><strong>Retention:</strong> We retain your info unless you request deletion, it's collected unlawfully, or required by law.</p>
+  
+  <p><strong>03. Signing up, registration, and account management</strong><br>
+  Some of the Services require registration and signing up to a user account, for example, when you use any of our trial software licenses or when you choose to purchase a Product license. If you choose to do so, you will be asked to submit some information such as your email address, full name, and other Personal Information as the submission form indicates.</p>
+  <p><strong>Purpose:</strong> We use your account information to assign an account to you, secure your access to your account, manage your installations and purchases of license activity, and provide you with access to your account and the ability to manage it directly.</p>
+  <p><strong>Retention:</strong> We retain account information for as long as you are a User of the Product, and so long as the Account Information is required to provide you with the Services or process your payments, billing, complete a transaction, or as otherwise required by any applicable law.</p>
+  
+  <h3>Information Automatically Processed</h3>
+  <p>This category refers to means we use to improve our Customers' and Visitor's experience and our process performance for our Services.</p>
+  
+  <p><strong>01. Online Identifiers</strong><br>
+  When you access our websites or use the Products or Services, we may process one or more of the following online identifiers: the IP address that your internet provider assigned to your device and access to the web, cookies information as specified in our Cookie Policy.</p>
+  
+  <table class="info-table">
+    <thead>
+      <tr>
+        <th>Category</th>
+        <th>Purpose</th>
+        <th>Retention</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Online Identifiers</td>
+        <td>Analytics, fraud prevention, marketing</td>
+        <td>Varies by cookie type (see Cookie Policy)</td>
+      </tr>
+      <tr>
+        <td>Device Information</td>
+        <td>Product compatibility, license management</td>
+        <td>Duration of product usage + reasonable period</td>
+      </tr>
+      <tr>
+        <td>Installation Reports</td>
+        <td>Fraud prevention, service delivery</td>
+        <td>Duration of installation + reasonable period</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h2>How We Share Personal Information</h2>
+  <p>In order to provide, operate, maintain, serve and improve our Services, we use third-party services. Such Services include payment processors, feedback features, support and ticketing systems, operational tools, analytics, statistical tools, and so forth.</p>
+  
+  <p>We may share Personal Information of Users with the following categories of third parties:</p>
+  <ol>
+    <li>Hosting Services and Storage Vendors</li>
+    <li>Analytics, Business Intelligence, and Statistics Vendors</li>
+    <li>Support and Customer Services</li>
+    <li>Payment Processors</li>
+    <li>Advertising and Retargeting Services</li>
+    <li>Our Affiliated Companies</li>
+  </ol>
+
+  <h2>Your Privacy Rights</h2>
+  <p>Depending on your country of residency, you may have the following rights regarding your personal information:</p>
+  <ul>
+    <li>The right to know what personal information we collect about you</li>
+    <li>The right to access your personal information</li>
+    <li>The right to correct inaccurate personal information</li>
+    <li>The right to delete your personal information</li>
+    <li>The right to restrict or object to processing of your personal information</li>
+    <li>The right to data portability</li>
+    <li>The right to opt-out of the sale or sharing of personal information</li>
+    <li>The right against discriminatory treatment for exercising your privacy rights</li>
+  </ul>
+
+  <h2>Contact Information</h2>
+  <div class="contact-info">
+    <p>If you have any inquiries regarding this Privacy Policy, don't hesitate to contact us at:</p>
+    <p>Email: info@ITechSoftware.com</p>
+    <p>Phone: +1 (800) 342-4999</p>
+    <p>Address: 201 CENTURY VILLAGE BLVD STE 200 MONROE, LA 71203</p>
+  </div>
+</div>
+
+<script>
+  // Simple language selector functionality
+  document.getElementById('language-select').addEventListener('change', function() {
+    // In a real implementation, this would load the appropriate language version
+    if(this.value !== 'en') {
+      alert('The selected language is provided for convenience only. The legally binding version is the English version.');
+    }
+  });
+</script>
+{% endblock %}

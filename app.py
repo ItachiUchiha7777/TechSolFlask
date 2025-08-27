@@ -29,6 +29,9 @@ def service_category(category):
 @app.route('/partner')
 def partner():
     return render_template('partner.html', services_data=SERVICES_DATA)
+@app.route('/privacy')
+def privacy():
+    return render_template('privacy.html', services_data=SERVICES_DATA)
 
 @app.route('/service/<category>/<service_name>')
 def service_detail(category, service_name):
