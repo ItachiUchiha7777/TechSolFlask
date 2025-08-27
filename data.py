@@ -366,7 +366,7 @@ SERVICES_DATA = {
                     'Provide basic computer operation training'
                 ]
             },
-            'Printers': {
+            'Printers and Scanner': {
                 'price': '$89.00 USD',
                 'description': 'Printer installation and setup',
                 'image': 'https://cdn.thewirecutter.com/wp-content/media/2022/12/instant-photo-printer-2048px-6769.jpg?auto=webp&quality=75&width=1024',
