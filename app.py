@@ -32,6 +32,9 @@ def partner():
 @app.route('/privacy')
 def privacy():
     return render_template('privacy.html', services_data=SERVICES_DATA)
+@app.route("/disclaimer")
+def disclaimer():
+    return render_template("disclaimer.html",services_data=SERVICES_DATA)
 
 @app.route('/service/<category>/<service_name>')
 def service_detail(category, service_name):

@@ -1,0 +1,178 @@
+{% extends 'base.html' %}
+
+{% block title %}24/7 Customer Support Disclaimer - I Tech Software Services{% endblock %}
+
+{% block extra_css %}
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+
+<style>
+  body {
+    font-family: 'Inter', sans-serif;
+    background-color: #f8f9fb;
+    margin: 0;
+    padding: 0;
+  }
+
+  /* Hero Section - Fixed to prevent navbar overlap */
+  .hero {
+    position: relative;
+    background: url('https://images.pexels.com/photos/26998509/pexels-photo-26998509.jpeg?cs=srgb&dl=pexels-rajvardhan-singh-193602791-26998509.jpg&fm=jpg') center center/cover no-repeat;
+    height: 280px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    overflow: hidden;
+    margin-top: 80px; /* Add margin to prevent navbar overlap */
+  }
+
+  .hero-overlay {
+    position: absolute;
+    top: 0; right: 0; bottom: 0; left: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 0;
+  }
+
+  .hero-title {
+    position: relative;
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+    font-size: 3rem;
+    z-index: 1;
+    text-align: center;
+    letter-spacing: 1px;
+  }
+
+  /* Disclaimer Container */
+  .disclaimer-container {
+    max-width: 950px;
+    margin: 3rem auto 5rem;
+    padding: 2.5rem 3rem;
+    background: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+  }
+
+  .disclaimer-container h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #222;
+    margin-top: 2.5rem;
+    margin-bottom: 1rem;
+    padding-bottom: 0.4rem;
+    border-bottom: 1px solid #eee;
+  }
+
+  .disclaimer-container p {
+    color: #444;
+    font-size: 1.05rem;
+    line-height: 1.7;
+    margin-bottom: 1rem;
+  }
+
+  .disclaimer-container strong {
+    font-weight: 600;
+    color: #000;
+  }
+
+  .disclaimer-container ul {
+    color: #444;
+    font-size: 1.05rem;
+    line-height: 1.7;
+    margin-bottom: 1rem;
+    padding-left: 1.5rem;
+  }
+
+  .disclaimer-container li {
+    margin-bottom: 0.5rem;
+  }
+
+  /* Warning Box */
+  .warning-box {
+    background-color: #fff8e6;
+    border-left: 4px solid #ffc107;
+    padding: 1.5rem;
+    margin: 2rem 0;
+    border-radius: 4px;
+  }
+
+  .warning-box h3 {
+    font-family: 'Inter', sans-serif;
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #333;
+    margin-top: 0;
+  }
+
+  /* Contact Info */
+  .contact-info {
+    margin-top: 2rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid #eee;
+  }
+
+  .contact-info p {
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+  }
+
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .hero {
+      margin-top: 70px; /* Adjust for mobile if needed */
+      height: 240px;
+    }
+    
+    .hero-title {
+      font-size: 2.2rem;
+    }
+    
+    .disclaimer-container {
+      padding: 1.5rem;
+      margin: 1.5rem;
+    }
+    
+    .disclaimer-container h2 {
+      font-size: 1.5rem;
+    }
+  }
+</style>
+{% endblock %}
+
+{% block content %}
+<div class="hero">
+  <div class="hero-overlay"></div>
+  <h1 class="hero-title">24/7 Customer Support Disclaimer</h1>
+</div>
+
+<div class="disclaimer-container">
+  <!-- <div class="warning-box">
+    <h3>Important Notice</h3>
+    <p>Please read this disclaimer carefully before using our technical support services. By using our support services, you acknowledge and agree to the terms outlined below.</p>
+  </div> -->
+
+  <h2>Support Services Disclaimer</h2>
+  <p><b>I Tech Software Services </b>  provides technical support services to assist with troubleshooting and resolving issues related to your products. While we strive to offer the best possible assistance, please note the following:</p>
+  
+  <h2>1. No Guarantee of Problem Resolution</h2>
+  <p><b>I Tech Software Services </b> cannot guarantee that all issues will be resolved. Some problems may require additional support beyond our scope.</p>
+  
+  <h2>2. Limited Liability</h2>
+  <p>I Tech Software Services is not liable for any data loss, system damage, or other consequences resulting from our technical support services. Users are advised to back up all important data before seeking support.</p>
+  
+  <h2>3. Service Scope</h2>
+  <p>Our support services are limited to addressing software and minor hardware issues. Major maintenance or physically damaged equipment are not covered under our configuration support.</p>
+  
+  <h2>4. User Responsibility</h2>
+  <p>Users are responsible for following the instructions provided by our support team and ensuring their systems are adequately maintained.</p>
+  
+  <h2>5. Contact Us</h2>
+  <p>If you have concerns then you can contact us via email: info@itechsoftwareservices.com</p>
+  
+  <div class="contact-info">
+    <p>By using I  <b>Tech Software Services's</b> technical support services, you acknowledge and agree to this disclaimer.</p>
+  </div>
+</div>
+{% endblock %}

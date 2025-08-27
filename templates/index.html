@@ -3,20 +3,26 @@
 {% block extra_css %}
 /* Hero Section */
 .hero-section {
-    padding-top: 8rem ;
-
-     background: url("https://img.freepik.com/free-vector/realistic-technology-background_52683-73672.jpg") no-repeat center center fixed;
+    padding-top: 8rem;
+    background: url("https://i.ibb.co/C3GTsqn9/Chat-GPT-Image-Aug-28-2025-12-22-26-AM.png") no-repeat center center fixed;
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
-    min-height: 50vh;
+    min-height: 100vh;
     display: flex;
     align-items: center;
     position: relative;
     overflow: hidden;
     padding-bottom: 3rem;
-        <!-- background: linear-gradient(135deg, rgba(37, 99, 235, 0.9), rgba(14, 165, 233, 0.9)),
-                url('https://img.freepik.com/free-vector/realistic-technology-background_52683-73672.jpg'); -->
+    margin-top: 80px;
+}
+
+/* For phones */
+@media (max-width: 768px) {
+    .hero-section {
+        min-height: 50vh;
+        background-attachment: scroll; /* improves performance on mobile */
+    }
 }
 
 .hero-section::before {
@@ -29,6 +35,7 @@
     background: linear-gradient(135deg, rgba(37, 99, 235, 0.1), rgba(14, 165, 233, 0.1));
     z-index: 1;
 }
+
 
 .hero-content {
     text-align: center;
@@ -572,16 +579,16 @@
         <div class="hero-content">
             <h1 class="hero-title">Complete Technology Solutions</h1>
             <p class="hero-subtitle">
-                From computer repairs to smart home installations, we're your trusted technology partner. 
-                Professional, reliable, and available when you need us most.
+                Welcome to iTech Software Services. <br>
+Bringing smart solutions to your home and reliable solutions to your devices, all in one place. we're your trusted technology partner. Professional, reliable, and available when you need us most.
             </p>
-            <div class="hero-buttons">
+            <div class="hero-buttons " style="padding-top: 100px;">
                 <a href="{{ url_for('contact') }}" class="btn btn-primary btn-lg me-3">
                     <i class="fas fa-rocket me-2"></i>Get Started Today
                 </a>
-                <a href="tel:+18003424999" class="btn btn-outline-light btn-lg">
+                <!-- <a href="tel:+18003424999" class="btn btn-outline-light btn-lg">
                     <i class="fas fa-phone me-2"></i>Call Now
-                </a>
+                </a> -->
             </div>
         </div>
     </div>
@@ -591,9 +598,9 @@
 <section id="device-services" class="py-5 bg-light">
   <div class="container">
     <div class="text-center mb-4">
-      <h2 class="fw-bold">You!</h2>
-      <p class="lead mb-0">
-        From laptops to smartphones, printers to smart home devices – we've got your back with reliable assistance for all your gadgets.
+      <h2 class="fw-bold">Personalized assistance for You!</h2>
+      <p class="lead mb-0"> <b>
+        From laptops to smartphones, printers to smart home devices – we've got your back with reliable assistance for all your gadgets.</b>
       </p>
     </div>
 
