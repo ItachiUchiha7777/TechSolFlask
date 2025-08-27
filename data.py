@@ -378,7 +378,30 @@ SERVICES_DATA = {
                     'Test printing, scanning, and copying functions',
                     'Set up mobile printing if supported'
                 ]
-            }
+            },'Firewall & Security': {
+            'price': '$69.00 USD',
+            'description': 'Enhanced protection setup for your devices',
+            'image': 'https://exa.net.uk/wp-content/uploads/2021/06/What-is-a-firewall.png',
+            'details': [
+                'Configure built-in or third-party firewall',
+                'Set up network-level protection',
+                'Monitor and block suspicious activity',
+                'Harden system settings for security',
+                'Provide guidance on safe usage and threat awareness'
+            ]
+        },'Email Troubleshooting': {
+            'price': '$59.00 USD',
+            'description': 'Resolve email sending and receiving issues',
+            'image': 'https://cdn.mos.cms.futurecdn.net/tiRXdV82rGesy4DkRsHpFU.jpg',
+            'details': [
+                'Fix problems with sending/receiving emails',
+                'Recover lost emails or contacts if possible',
+                'Secure email account from spam and phishing',
+                'Optimize mailbox performance and storage',
+                'Set up email filters and auto-replies',
+                'Train on recognizing email threats'
+            ]
+        }
         },
         'images': {
             'main': 'https://static.vecteezy.com/system/resources/previews/022/460/209/non_2x/a-computer-desktop-wallpaper-for-forex-trading-terminal-ai-generative-desktop-background-free-photo.jpg',
@@ -469,5 +492,6 @@ SERVICES_DATA = {
                 'https://images.unsplash.com/photo-1571003123894-1f0594d2b5d9?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80'
             ]
         }
-    }
+    },
+    
 }

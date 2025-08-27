@@ -721,6 +721,42 @@
     </div>
 </section>
 
+<!-- ...your existing Services Section HTML... -->
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  // Dynamically detect the base URL (works for localhost and production)
+  const baseURL = `${window.location.protocol}//${window.location.host}`;
+
+  // Map visible card titles to their specific paths (without hardcoding domain)
+  const customLinks = new Map([
+    ['Home Security', `${baseURL}/services/home_security`],
+    ['TV Mounting', `${baseURL}/services/tv_mounting`],
+    ['Audio and Video (Alexa)', `${baseURL}/service/audio_video/Advanced%20Audio%20Systems`],
+    ['Mobile and Tablet', `${baseURL}/service/mobile_devices/Phone%20%26%20Tablet`],
+    ['Wifi Network', `${baseURL}/service/wifi_network/Routers`],
+    ['Printer And Scanner', `${baseURL}/service/computers_printers/Printers`],
+    ['Computer', `${baseURL}/service/computers_printers/Computers`],
+    ['Antivirus', `${baseURL}/service/computers_printers/Firewall%20%26%20Security`],
+    ['Email', `${baseURL}/service/computers_printers/Email%20Troubleshooting`],
+  ]);
+
+  // Apply the links to service cards dynamically
+  document.querySelectorAll('.service-circle-card').forEach(card => {
+    const titleEl = card.querySelector('.service-title');
+    const linkEl  = card.querySelector('a.service-circle-link');
+    if (!titleEl || !linkEl) return;
+
+    const title = titleEl.textContent.trim();
+    if (customLinks.has(title)) {
+      linkEl.setAttribute('href', customLinks.get(title));
+    }
+  });
+});
+</script>
+
+
+
 <!-- Features Section -->
 <section class="section-padding">
     <div class="container">
@@ -892,7 +928,7 @@
     </div>
 </section>
 
-
+{#
 <!-- CTA Section -->
 <section class="cta-section section-padding">
     <div class="container text-center">
@@ -915,7 +951,7 @@
         </div>
     </div>
 </section>
-
+#}
 <!-- Emergency Support Badge -->
 <div class="emergency-badge" onclick="window.location.href='tel:+18003424999'">
     <i class="fas fa-exclamation-triangle me-2"></i>
